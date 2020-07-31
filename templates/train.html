@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container text-center">
+</form>
+    <br/>
+    {% if model_training_success %}
+    <div class="alert alert-success" role="alert">
+      <h3>Model training successful</h3>
+    </div>
+    {% elif model_training_failure == False %}
+    <div class="alert alert-danger" role="alert">
+     <h3>Model training failed. Please check the logs</h3>
+    </div>
+    {% endif %}
+ </form>
+</div>
+ {% endblock content %}

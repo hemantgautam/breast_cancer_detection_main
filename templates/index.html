@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container text-center">
+        <form action="/" method="post">
+            <br>
+                <h2>Breast Cancer Prediction</h2>
+            <br>
+                {% if model_training_success %}
+                        <div class="alert alert-success" role="alert">
+                          <h3>Model training successful</h3>
+                        </div>
+                    {% elif model_training_failure == False %}
+                        <div class="alert alert-danger" role="alert">
+                         <h3>Model training failed. Please check the logs</h3>
+                        </div>
+                {% endif %}
+                {% if prediction_text %}
+                <div class="alert alert-success" role="alert">
+                  {{ prediction_text }}
+                </div>
+                {% endif %}
+                {% if error_text %}
+                <div class="alert alert-danger" role="alert">
+                  {{ error_text }}
+                </div>
+                {% endif %}
+                {% if file_error %}
+                <div class="alert alert-danger" role="alert">
+                  No model present. Please train the model first.
+                </div>
+                {% endif %}                
+            <div class="form-row 1">
+                <div class="form-group col-md-2">
+                    <input placeholder="radius_mean" type="text" class="form-control" name="radius_mean" required>
+                </div>
+                <div class="form-group col-md-2">
+                    <input placeholder="texture_mean" type="text" class="form-control" name="texture_mean" required>
+                </div>
+                <div class="form-group col-md-2">
+                    <input placeholder="perimeter_mean" type="text" class="form-control" name="perimeter_mean" required>
+                </div>
+                <div class="form-group col-md-2">
+                    <input placeholder="area_mean" type="text" class="form-control" name="area_mean" required>
+                </div>
+                <div class="form-group col-md-2">
+                    <input placeholder="smoothness_mean" type="text" class="form-control" name="smoothness_mean" required>
+                </div> 
+                <div class="form-group col-md-2">
+                    <input placeholder="compactness_mean" type="text" class="form-control" name="compactness_mean" required>
+                </div> 
+            </div>
+            <div class="form-row 2">
+                <div class="form-group col-md-2">
+                    <input placeholder="concavity_mean" type="text" class="form-control" name="concavity_mean" required>
+                </div>
+                <div class="form-group col-md-2">
+                    <input placeholder="concave points_mean" type="text" class="form-control" name="concave_points_mean" required>
+                </div>
+                <div class="form-group col-md-2">
+                    <input placeholder="symmetry_mean" type="text" class="form-control" name="symmetry_mean" required>
+                </div>
+                <div class="form-group col-md-2">
+                    <input placeholder="fractal_dimension_mean" type="text" class="form-control" name="fractal_dimension_mean" required>
+                </div>
+                <div class="form-group col-md-2">
+                    <input placeholder="radius_se" type="text" class="form-control" name="radius_se" required>
+                </div> 
+                <div class="form-group col-md-2">
+                    <input placeholder="texture_se" type="text" class="form-control" name="texture_se" required>
+                </div> 
+            </div>
+            <div class="form-row 3">
+                <div class="form-group col-md-2">
+                    <input placeholder="perimeter_se" type="text" class="form-control" name="perimeter_se" required>
+                </div>
+                <div class="form-group col-md-2">
+                    <input placeholder="area_se" type="text" class="form-control" name="area_se" required>
+                </div>
+                <div class="form-group col-md-2">
+                    <input placeholder="smoothness_se" type="text" class="form-control" name="smoothness_se" required>
+                </div>
+                <div class="form-group col-md-2">
+                    <input placeholder="compactness_se" type="text" class="form-control" name="compactness_se" required>
+                </div>
+ 
+                <div class="form-group col-md-2">
+                    <input placeholder="concavity_se" type="text" class="form-control" name="concavity_se" required>
+                </div>
+                <div class="form-group col-md-2">
+                    <input placeholder="concave points_se" type="text" class="form-control" name="concave_points_se" required>
+                </div>
+            </div>
+            <div class="form-row 4">
+
+                <div class="form-group col-md-2">
+                    <input placeholder="symmetry_se" type="text" class="form-control" name="symmetry_se" required>
+                </div>
+                <div class="form-group col-md-2">
+                    <input placeholder="fractal_dimension_se" type="text" class="form-control" name="fractal_dimension_se" required>
+                </div>
+                <div class="form-group col-md-2">
+                    <input placeholder="radius_worst" type="text" class="form-control" name="radius_worst" required>
+                </div>
+                <div class="form-group col-md-2">
+                    <input placeholder="texture_worst" type="text" class="form-control" name="texture_worst" required>
+                </div> 
+                <div class="form-group col-md-2">
+                    <input placeholder="perimeter_worst" type="text" class="form-control" name="perimeter_worst" required>
+                </div>
+                <div class="form-group col-md-2">
+                    <input placeholder="area_worst" type="text" class="form-control" name="area_worst" required>
+                </div>
+            </div>
+            <div class="form-row 5">
+                <div class="form-group col-md-2">
+                    <input placeholder="smoothness_worst" type="text" class="form-control" name="smoothness_worst" required>
+                </div>
+                <div class="form-group col-md-2">
+                    <input placeholder="compactness_worst" type="text" class="form-control" name="compactness_worst" required>
+                </div>
+                <div class="form-group col-md-2">
+                    <input placeholder="concavity_worst" type="text" class="form-control" name="concavity_worst" required>
+                </div>
+                <div class="form-group col-md-2">
+                    <input placeholder="concave points_worst" type="text" class="form-control" name="concave_points_worst" required>
+                </div>
+                <div class="form-group col-md-2">
+                    <input placeholder="symmetry_worst" type="text" class="form-control" name="symmetry_worst" required>
+                </div> 
+                <div class="form-group col-md-2">
+                    <input placeholder="fractal_dimension_worst" type="text" class="form-control" name="fractal_dimension_worst" required>
+                </div> 
+            </div>
+        <button type="submit" class="btn btn-primary">Predict</button>
+        <br>
+        <div class='text-center'><h3>OR</h3></div>
+        </form>
+            <form action="/predict" method = "POST" 
+            enctype = "multipart/form-data">
+                <input required type = "file" name = "file" />
+                <input value="Upload csv & submit for prediction" type = "submit"/>
+            </form>
+         </form>
+    </div>
+{% endblock content %}

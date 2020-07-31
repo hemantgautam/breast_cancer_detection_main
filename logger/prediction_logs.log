@@ -1,0 +1,236 @@
+2020-07-31 20:57:59,741 - app - INFO - ==========================Prediction  Started==========================
+2020-07-31 20:57:59,779 - app - INFO - Breast Cancer-Test-Data1.csv
+2020-07-31 20:57:59,921 - predict_validation_process.predict_validation_functions - INFO - ---Shape Before deleting unnammed column---
+2020-07-31 20:58:00,121 - predict_validation_process.predict_validation_functions - INFO - (569, 31)
+2020-07-31 20:58:00,287 - predict_validation_process.predict_validation_functions - INFO - ---Shape After deleting unnammed column---
+2020-07-31 20:58:00,405 - predict_validation_process.predict_validation_functions - INFO - (569, 31)
+2020-07-31 20:58:00,501 - predict_validation_process.predict_validation_functions - INFO - ----------matchColumnsDetailsWithSchema Starts----------
+2020-07-31 20:58:00,529 - predict_validation_process.predict_validation_functions - INFO - Number of columns are identical with equal columns in the dataset and schema.
+2020-07-31 20:58:00,552 - predict_validation_process.predict_validation_functions - INFO - ----------removeNullValues Starts----------
+2020-07-31 20:58:00,560 - predict_validation_process.predict_validation_functions - INFO - (569, 31)
+2020-07-31 20:58:00,561 - predict_validation_process.predict_validation_functions - INFO - Null Values Count Before :
+2020-07-31 20:58:00,568 - predict_validation_process.predict_validation_functions - INFO - id                         0
+radius_mean                0
+texture_mean               0
+perimeter_mean             0
+area_mean                  0
+smoothness_mean            0
+compactness_mean           0
+concavity_mean             0
+concave points_mean        0
+symmetry_mean              0
+fractal_dimension_mean     0
+radius_se                  0
+texture_se                 0
+perimeter_se               0
+area_se                    0
+smoothness_se              0
+compactness_se             0
+concavity_se               0
+concave points_se          0
+symmetry_se                0
+fractal_dimension_se       0
+radius_worst               0
+texture_worst              0
+perimeter_worst            0
+area_worst                 0
+smoothness_worst           0
+compactness_worst          0
+concavity_worst            0
+concave points_worst       0
+symmetry_worst             0
+fractal_dimension_worst    0
+dtype: int64
+2020-07-31 20:58:00,572 - predict_validation_process.predict_validation_functions - INFO - Null Values Count After :
+2020-07-31 20:58:00,581 - predict_validation_process.predict_validation_functions - INFO - id                         0
+radius_mean                0
+texture_mean               0
+perimeter_mean             0
+area_mean                  0
+smoothness_mean            0
+compactness_mean           0
+concavity_mean             0
+concave points_mean        0
+symmetry_mean              0
+fractal_dimension_mean     0
+radius_se                  0
+texture_se                 0
+perimeter_se               0
+area_se                    0
+smoothness_se              0
+compactness_se             0
+concavity_se               0
+concave points_se          0
+symmetry_se                0
+fractal_dimension_se       0
+radius_worst               0
+texture_worst              0
+perimeter_worst            0
+area_worst                 0
+smoothness_worst           0
+compactness_worst          0
+concavity_worst            0
+concave points_worst       0
+symmetry_worst             0
+fractal_dimension_worst    0
+dtype: int64
+2020-07-31 20:58:00,587 - predict_validation_process.predict_validation_functions - INFO - ----------predictValues Starts----------
+2020-07-31 20:58:00,602 - predict_validation_process.predict_validation_functions - INFO - (569, 30)
+2020-07-31 21:01:45,268 - app - INFO - ==========================Prediction  Started==========================
+2020-07-31 21:01:45,278 - app - INFO - Breast Cancer-Test-Data1.csv
+2020-07-31 21:01:45,328 - predict_validation_process.predict_validation_functions - INFO - ---Shape Before deleting unnammed column---
+2020-07-31 21:01:45,330 - predict_validation_process.predict_validation_functions - INFO - (569, 31)
+2020-07-31 21:01:45,336 - predict_validation_process.predict_validation_functions - INFO - ---Shape After deleting unnammed column---
+2020-07-31 21:01:45,340 - predict_validation_process.predict_validation_functions - INFO - (569, 31)
+2020-07-31 21:01:45,345 - predict_validation_process.predict_validation_functions - INFO - ----------matchColumnsDetailsWithSchema Starts----------
+2020-07-31 21:01:45,365 - predict_validation_process.predict_validation_functions - INFO - Number of columns are identical with equal columns in the dataset and schema.
+2020-07-31 21:01:45,370 - predict_validation_process.predict_validation_functions - INFO - ----------removeNullValues Starts----------
+2020-07-31 21:01:45,377 - predict_validation_process.predict_validation_functions - INFO - (569, 31)
+2020-07-31 21:01:45,390 - predict_validation_process.predict_validation_functions - INFO - Null Values Count Before :
+2020-07-31 21:01:45,397 - predict_validation_process.predict_validation_functions - INFO - id                         0
+radius_mean                0
+texture_mean               0
+perimeter_mean             0
+area_mean                  0
+smoothness_mean            0
+compactness_mean           0
+concavity_mean             0
+concave points_mean        0
+symmetry_mean              0
+fractal_dimension_mean     0
+radius_se                  0
+texture_se                 0
+perimeter_se               0
+area_se                    0
+smoothness_se              0
+compactness_se             0
+concavity_se               0
+concave points_se          0
+symmetry_se                0
+fractal_dimension_se       0
+radius_worst               0
+texture_worst              0
+perimeter_worst            0
+area_worst                 0
+smoothness_worst           0
+compactness_worst          0
+concavity_worst            0
+concave points_worst       0
+symmetry_worst             0
+fractal_dimension_worst    0
+dtype: int64
+2020-07-31 21:01:45,408 - predict_validation_process.predict_validation_functions - INFO - Null Values Count After :
+2020-07-31 21:01:45,412 - predict_validation_process.predict_validation_functions - INFO - id                         0
+radius_mean                0
+texture_mean               0
+perimeter_mean             0
+area_mean                  0
+smoothness_mean            0
+compactness_mean           0
+concavity_mean             0
+concave points_mean        0
+symmetry_mean              0
+fractal_dimension_mean     0
+radius_se                  0
+texture_se                 0
+perimeter_se               0
+area_se                    0
+smoothness_se              0
+compactness_se             0
+concavity_se               0
+concave points_se          0
+symmetry_se                0
+fractal_dimension_se       0
+radius_worst               0
+texture_worst              0
+perimeter_worst            0
+area_worst                 0
+smoothness_worst           0
+compactness_worst          0
+concavity_worst            0
+concave points_worst       0
+symmetry_worst             0
+fractal_dimension_worst    0
+dtype: int64
+2020-07-31 21:01:45,413 - predict_validation_process.predict_validation_functions - INFO - ----------predictValues Starts----------
+2020-07-31 21:01:45,422 - predict_validation_process.predict_validation_functions - INFO - (569, 30)
+2020-07-31 21:02:11,286 - predict_validation_process.predict_validation_functions - INFO - ==========================Prediction Completed==========================
+2020-07-31 21:40:18,640 - app - INFO - ==========================Prediction  Started==========================
+2020-07-31 21:40:18,660 - app - INFO - Breast Cancer-Test-Data1.csv
+2020-07-31 21:40:18,724 - predict_validation_process.predict_validation_functions - INFO - ---Shape Before deleting unnammed column---
+2020-07-31 21:40:18,772 - predict_validation_process.predict_validation_functions - INFO - (569, 31)
+2020-07-31 21:40:18,810 - predict_validation_process.predict_validation_functions - INFO - ---Shape After deleting unnammed column---
+2020-07-31 21:40:18,840 - predict_validation_process.predict_validation_functions - INFO - (569, 31)
+2020-07-31 21:40:18,860 - predict_validation_process.predict_validation_functions - INFO - ----------matchColumnsDetailsWithSchema Starts----------
+2020-07-31 21:40:18,913 - predict_validation_process.predict_validation_functions - INFO - Number of columns are identical with equal columns in the dataset and schema.
+2020-07-31 21:40:18,929 - predict_validation_process.predict_validation_functions - INFO - ----------removeNullValues Starts----------
+2020-07-31 21:40:18,944 - predict_validation_process.predict_validation_functions - INFO - (569, 31)
+2020-07-31 21:40:18,957 - predict_validation_process.predict_validation_functions - INFO - Null Values Count Before :
+2020-07-31 21:40:18,988 - predict_validation_process.predict_validation_functions - INFO - id                         0
+radius_mean                0
+texture_mean               0
+perimeter_mean             0
+area_mean                  0
+smoothness_mean            0
+compactness_mean           0
+concavity_mean             0
+concave points_mean        0
+symmetry_mean              0
+fractal_dimension_mean     0
+radius_se                  0
+texture_se                 0
+perimeter_se               0
+area_se                    0
+smoothness_se              0
+compactness_se             0
+concavity_se               0
+concave points_se          0
+symmetry_se                0
+fractal_dimension_se       0
+radius_worst               0
+texture_worst              0
+perimeter_worst            0
+area_worst                 0
+smoothness_worst           0
+compactness_worst          0
+concavity_worst            0
+concave points_worst       0
+symmetry_worst             0
+fractal_dimension_worst    0
+dtype: int64
+2020-07-31 21:40:19,023 - predict_validation_process.predict_validation_functions - INFO - Null Values Count After :
+2020-07-31 21:40:19,064 - predict_validation_process.predict_validation_functions - INFO - id                         0
+radius_mean                0
+texture_mean               0
+perimeter_mean             0
+area_mean                  0
+smoothness_mean            0
+compactness_mean           0
+concavity_mean             0
+concave points_mean        0
+symmetry_mean              0
+fractal_dimension_mean     0
+radius_se                  0
+texture_se                 0
+perimeter_se               0
+area_se                    0
+smoothness_se              0
+compactness_se             0
+concavity_se               0
+concave points_se          0
+symmetry_se                0
+fractal_dimension_se       0
+radius_worst               0
+texture_worst              0
+perimeter_worst            0
+area_worst                 0
+smoothness_worst           0
+compactness_worst          0
+concavity_worst            0
+concave points_worst       0
+symmetry_worst             0
+fractal_dimension_worst    0
+dtype: int64
+2020-07-31 21:40:19,071 - predict_validation_process.predict_validation_functions - INFO - ----------predictValues Starts----------
+2020-07-31 21:40:19,129 - predict_validation_process.predict_validation_functions - INFO - (569, 30)
+2020-07-31 21:41:05,314 - predict_validation_process.predict_validation_functions - INFO - ==========================Prediction Completed==========================

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Breast Cancer Prediction</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<style type="text/css">
+		table th {
+			text-align: center; 
+		}
+
+		.table {
+			margin: auto;
+			width: 50% !important; 
+		}
+	</style>    
+</head> 
+<title>Result</title>  
+</head>  
+<body>
+	<h2 class="text-center">Result</h2>
+	<table class="table table-bordered table-striped text-center table-responsive-sm">
+	  <thead>
+	    <tr>
+	      <th scope="col">Patient ID</th>
+	      <th scope="col">Result</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+		{% for key, value in result_dict.items() %}	
+		    <tr>
+		      <td> {{ key }} </td>
+				{% if value == 1 %}
+					<td>Malignant</td>
+				{% else %}
+					<td>Benign</td>
+				{% endif %}
+		    </tr>
+		{% endfor %}
+	  </tbody>
+	</table>
+</body>  
+</html>
