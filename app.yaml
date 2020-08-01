@@ -1,4 +1,4 @@
-runtime:python
+runtime: python
 vm: true
 entrypoint: gunicorn -b $PORT main:app
 
