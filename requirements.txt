@@ -17,7 +17,6 @@ pymongo
 pyrsistent
 python-dateutil
 pytz
-pywin32
 PyYAML
 scikit-learn
 scipy
