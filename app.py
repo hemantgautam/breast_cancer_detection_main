@@ -17,25 +17,29 @@ app = Flask(__name__)
 CORS(app, supports_credentials=True)
 logger = getlogger(app.name, './logger/prediction_logs.log', consoleHandlerrequired=True)
 
-
-@app.route("/apibreastcancer", methods=["GET"])
-# @cross_origin(supports_credentials=True)
-def index_page():
-    response = jsonify('Hello World!!!')
-    return response
-
 @app.route("/")
 def index():
     return render_template('index.html')
 
-@app.route("/train", methods=['GET'])
-def trainValidation():
+@app.route("/breast-cancer-api/train", methods=['GET'])
+def trainValidationAPI():
     trainObject = TrainValidation()
     response = trainObject.train_validation()
     if response is True:
-        return render_template('index.html', model_training_success=True)
+        return jsonify({'message' : 'Model training successful. Start predicting from web application.'})
     else:
-        return render_template('index.html', model_training_failure=False)
+        return jsonify({'message' : 'Model training fails. Please check the training logs.'})
+
+
+# @app.route("/train", methods=['GET'])
+# def trainValidation():
+#     trainObject = TrainValidation()
+#     response = trainObject.train_validation()
+#     if response is True:
+#         return render_template('index.html', model_training_success=True)
+#     else:
+#         return render_template('index.html', model_training_failure=False)
+
 
 @app.route("/predict", methods=['GET', 'POST'])
 def predictValidation():
@@ -122,5 +126,5 @@ def predict():
 
 
 if __name__ == '__main__':
-    app.run(port='6000')
-    # app.run(debug=True)
+    # app.run(port='6000')
+    app.run(debug=True)
