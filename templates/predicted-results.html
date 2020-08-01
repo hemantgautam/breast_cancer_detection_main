@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+<h2 class="text-center">Results</h2>
+<div class="container text-center">
+    {% if predicted_result %}
+    <table id="breast_cancer_results" class="table table-bordered table-striped text-center table-responsive-sm">
+      <thead>
+        <tr>
+          <th scope="col">Patient ID</th>
+          <th scope="col">Result</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for document in predicted_result %}
+            <tr>
+              <td> {{ document['pid'] }} </td>
+                {% if document['cancer_type'] == 1 %}
+                    <td>Malignant</td>
+                {% else %}
+                    <td>Benign</td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <br>
+    <h4 class="text-center alert alert-danger"> No Result found.</h4>
+    {% endif %}
+</div>
+<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+<script type="text/javascript">
+$(document).ready( function () {
+    $('#breast_cancer_results').DataTable();
+} );
+</script>
+ {% endblock content %}

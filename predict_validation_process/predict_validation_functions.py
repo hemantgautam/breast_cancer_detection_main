@@ -75,7 +75,7 @@ class PredictValidationFunctions:
 		pid = self.df['id']
 		dfrows = X.shape[0]
 		value_lst = []
-		result_dict = {}
+		# result_dict = {}
 		# fetch best model pickle file name
 		try:
 			filename = 'model/final_model/best_pickle_file.pkl'
@@ -85,16 +85,20 @@ class PredictValidationFunctions:
 				for value in X.iloc[row]:
 					value_lst.append(value)
 				predict_value = model.predict([value_lst])
-				result_dict[pid[row]] = predict_value[0]
+				# result_dict[int(pid[row])] = int(predict_value[0])
+				each_pred_record = {"pid": int(pid[row]), "cancer_type": int(predict_value[0]) }
+				# self.logger.info(each_pred_record)
+				db_conn.storePredictedResult(each_pred_record)
 
 			# Store predicted data into DB
 			db_conn.storePredictCSVToDB(self.df)
 
 			# Store predicted result into DB
 			# db_conn.storePredictedResult(result_dict)
-
+			# self.logger.info(result_dict)
 			self.logger.info("==========================Prediction Completed==========================")
-			return result_dict
+			# return result_dict
+			return True
 		except Exception as e:
 			self.logger.info(e)
 			raise e

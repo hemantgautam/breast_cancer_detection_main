@@ -14,7 +14,6 @@ class TrainValidation:
 		response = self.train_val_funs.matchColumnsDetailsWithSchema()
 		if response is True:
 
-			# function remove null Values in axis 0
 			self.train_val_funs.removeNullValues()
 
 			self.train_val_funs.convertToDummies()
@@ -24,13 +23,6 @@ class TrainValidation:
 			self.train_val_funs.storeFinalCsvToDatabase()
 			
 			return self.train_val_funs.ModelSelection()
-			# self.train_val_funs.selectModel()
-			# function to store data into Mongo db
-			# read data from DB and store that data into another folder to create model
-			# function for creating model
-
-
-			# self.logger.info("===========Train Successsful completed.===========")
 		else:
 			self.logger.info("matchColumnsDetailsWithSchema Failed")
 			return False
