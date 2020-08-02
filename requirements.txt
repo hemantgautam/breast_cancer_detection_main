@@ -4,13 +4,13 @@ dnspython
 flasgger
 Flask
 Flask-Cors
+gunicorn
 itsdangerous
 Jinja2
 joblib
 jsonschema
 MarkupSafe
 mistune
-uwsgi
 numpy
 pandas
 pymongo
