@@ -11,6 +11,7 @@ joblib
 jsonschema
 MarkupSafe
 mistune
+uwsgi
 numpy
 pandas
 pymongo

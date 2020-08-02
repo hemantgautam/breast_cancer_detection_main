@@ -29,7 +29,7 @@ class DatabaseConnect():
 	def storePredictedResult(self, each_pred_record):
 		
 		collection = self.db['predicted_result']
-		# collection.remove()
+		collection.remove()
 		# collection.insert_one(each_pred_record)
  	
 	def fetchPredictedResults(self):
