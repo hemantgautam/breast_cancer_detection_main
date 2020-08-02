@@ -17,20 +17,20 @@ class DatabaseConnect():
 	def storeTrainTestCSVToDB(self, df):
 		collection = self.db['corrected_train_data']
 		collection.remove()
-		# data_dict = df.to_dict("records")
-		# collection.insert_many(data_dict)
+		data_dict = df.to_dict("records")
+		collection.insert_many(data_dict)
 
 	def storePredictCSVToDB(self, df):
 		collection = self.db['predict_data']
 		collection.remove()
-		# data_dict = df.to_dict("records")
-		# collection.insert_many(data_dict)
+		data_dict = df.to_dict("records")
+		collection.insert_many(data_dict)
 
 	def storePredictedResult(self, each_pred_record):
 		
 		collection = self.db['predicted_result']
-		collection.remove()
-		# collection.insert_one(each_pred_record)
+		# collection.remove()
+		collection.insert_one(each_pred_record)
  	
 	def fetchPredictedResults(self):
 		collection = self.db['predicted_result']

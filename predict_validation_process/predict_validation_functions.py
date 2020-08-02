@@ -91,7 +91,7 @@ class PredictValidationFunctions:
 				db_conn.storePredictedResult(each_pred_record)
 
 			# Store predicted data into DB
-			db_conn.storePredictCSVToDB(self.df)
+# db_conn.storePredictCSVToDB(self.df)
 
 			# Store predicted result into DB
 			# db_conn.storePredictedResult(result_dict)

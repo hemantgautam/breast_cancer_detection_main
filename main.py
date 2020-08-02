@@ -19,6 +19,9 @@ logger = getlogger(app.name, './logger/prediction_logs.log', consoleHandlerrequi
 
 @app.route("/")
 def index():
+    db_conn = DatabaseConnect()
+    each_pred_record = {{"_id": 100, 'cancer_type': 0},{"_id": 200, 'cancer_type': 1}}
+    db_conn.storePredictedResult(each_pred_record)
     return render_template('index.html')
 
 @app.route("/breast-cancer-api/train", methods=['GET'])

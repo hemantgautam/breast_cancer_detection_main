@@ -4,7 +4,6 @@ dnspython
 flasgger
 Flask
 Flask-Cors
-gunicorn
 itsdangerous
 Jinja2
 joblib
