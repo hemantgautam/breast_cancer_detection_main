@@ -45,6 +45,6 @@ class DatabaseConnect():
     # function to fetch predicted results(id and cancer type) and show in front end
     def fetchPredictedResults(self):
         collection = self.db['predicted_result']
-        collection.remove()
+        # collection.remove()
         cursor = collection.find({})
         return cursor
