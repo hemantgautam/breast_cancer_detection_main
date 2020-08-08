@@ -10,23 +10,32 @@ from sklearn.metrics import classification_report, confusion_matrix, accuracy_sc
 import pickle
 from dbConnection.mongo import DatabaseConnect
 from shutil import copyfile
+from datetime import datetime
 
 # initilizing DB connection
 db_conn = DatabaseConnect()
 
 # class for creating all training methods
-class TrainValidationFunctions:
-    def __init__(self):
+class DataProcessingFunctions:
+    def __init__(self, log_file, process_type, df=None):
 
         # initializing logger file for training
         self.logger = getlogger(
-            __name__, './logger/training_logs.log', consoleHandlerrequired=True)
+            __name__, './logger/' + log_file, consoleHandlerrequired=True)
 
-        # schema json file which is getting used to validate training csv data
-        self.schema_path = 'schema_training.json'
+        
+        if process_type == "training":
 
-        # Reading trainings csv file to perform training
-        self.df = pd.read_csv('train_test_data/breast_cancer_dataset.csv')
+            # schema json file which is getting used to validate training csv data
+            self.schema_path = 'schema_training.json'
+
+            # Reading trainings csv file to perform training
+            self.df = pd.read_csv('train_test_data/breast_cancer_dataset.csv')
+        
+        elif process_type == "prediction":
+            self.schema_path = 'schema_prediction.json'
+            self.df = df
+
         self.logger.info("---Shape Before deleting unnammed column---")
         self.logger.info(self.df.shape)
 
@@ -167,3 +176,41 @@ class TrainValidationFunctions:
         except Exception as e:
             self.logger.info(e)
             self.logger.info("Error in selecting model.")
+
+
+    # function to load best_pickle file, predict data and store csv and predicted data both into database
+    def predictValues(self):
+        self.logger.info("----------predictValues Starts----------")
+        X = self.df.drop(columns=['id'], axis=1)
+        self.logger.info(X.shape)
+        pid = self.df['id']
+        dfrows = X.shape[0]
+        value_lst = []
+        result_list = []
+        try:
+            filename = 'models/final_model/best_pickle_file.pkl'
+            model = pickle.load(open(filename, 'rb'))
+            now = datetime.now()
+            for row in range(dfrows):
+                value_lst.clear()
+                for value in X.iloc[row]:
+                    value_lst.append(value)
+                predict_value = model.predict([value_lst])
+
+                # storing all the predictions(pid, cancer_type) in list
+                result_list.append(
+                    {"pid": int(pid[row]), "cancer_type": int(predict_value[0]), "TimeStamp":now.strftime("%d-%b-%Y %H:%M:%S")})
+
+            df = pd.DataFrame(result_list, index=None)
+
+            # Storing all the predicted values into Database
+            db_conn.storePredictedResult(df)
+
+            # Store predicted data into DB
+            # db_conn.storePredictCSVToDB(self.df)
+            self.logger.info(
+                "==========================Prediction Completed==========================")
+            return True
+        except Exception as e:
+            self.logger.info(e)
+            raise e

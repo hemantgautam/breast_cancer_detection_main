@@ -10,6 +10,7 @@
         <tr>
           <th scope="col">Patient ID</th>
           <th scope="col">Result</th>
+          <th scope="col">Time Stamp</th>
         </tr>
       </thead>
       <tbody>
@@ -21,6 +22,7 @@
                 {% else %}
                     <td>Benign</td>
                 {% endif %}
+                <td> {{ document['TimeStamp'] }} </td>
             </tr>
         {% endfor %}
       </tbody>
