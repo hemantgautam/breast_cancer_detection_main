@@ -54,7 +54,7 @@ class PredictValidationFunctions:
                         return True
                     else:
                         self.logger.info(
-                            "Type of columns are not similar in the dataset and schema.")
+                            "Type of columns are not similar in the dataset and schema. Please check the datatype of uploaded csv.")
                 except Exception as e:
                     self.logger.info(e)
                     self.logger.info(
@@ -89,7 +89,7 @@ class PredictValidationFunctions:
         value_lst = []
         result_list = []
         try:
-            filename = 'model/final_model/best_pickle_file.pkl'
+            filename = 'models/final_model/best_pickle_file.pkl'
             model = pickle.load(open(filename, 'rb'))
             for row in range(dfrows):
                 value_lst.clear()

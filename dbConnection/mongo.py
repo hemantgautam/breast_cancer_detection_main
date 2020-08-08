@@ -9,7 +9,6 @@ class DatabaseConnect():
 
         # Exception handling if connection with mongodb fails
         try:
-
             # Connection string for MongoDB
             client = pymongo.MongoClient(
                 "mongodb+srv://admin:admin@breastcancerdetection.h1ao7.mongodb.net/breast_cancer_detection?retryWrites=true&w=majority")

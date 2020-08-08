@@ -48,7 +48,7 @@ def trainValidationAPI():
 # function to predict csv file data and store result into database
 @app.route("/predict", methods=['GET', 'POST'])
 def predictValidation():
-    isfilepresent = os.path.isfile('model/final_model/best_pickle_file.pkl')
+    isfilepresent = os.path.isfile('models/final_model/best_pickle_file.pkl')
     if isfilepresent:
         if request.method == 'POST':
             f = request.files['file']
@@ -59,7 +59,7 @@ def predictValidation():
                     "==========================Prediction  Started==========================")
                 logger.info(f.filename)
                 f.save("predict_csv_uploads/" + filename)
-                df = pd.read_csv(f.filename, encoding='ISO-8859-1')
+                df = pd.read_csv("predict_csv_uploads/" + filename, encoding='ISO-8859-1')
                 # X = df.drop(columns=['id'], axis=1)
                 predObject = PredictValidation(df)
                 response = predObject.predict_validation()
@@ -83,7 +83,7 @@ def predictedResult():
 # function to predict individual values which user enter from front end
 @app.route("/", methods=['POST'])
 def predict():
-    isfilepresent = os.path.isfile('model/final_model/best_pickle_file.pkl')
+    isfilepresent = os.path.isfile('models/final_model/best_pickle_file.pkl')
     if isfilepresent:
         try:
             radius_mean = float(request.form['radius_mean'])
@@ -120,7 +120,7 @@ def predict():
                 request.form['fractal_dimension_worst'])
             try:
                 model = pickle.load(
-                    open("model/final_model/best_pickle_file.pkl", 'rb'))
+                    open("models/final_model/best_pickle_file.pkl", 'rb'))
                 predicted_value = model.predict([[radius_mean, texture_mean, perimeter_mean, area_mean, smoothness_mean, compactness_mean, concavity_mean, concave_points_mean, symmetry_mean, fractal_dimension_mean, radius_se, texture_se, perimeter_se, area_se, smoothness_se, compactness_se, concavity_se, concave_points_se, symmetry_se, fractal_dimension_se, radius_worst, texture_worst, perimeter_worst, area_worst, smoothness_worst, compactness_worst, concavity_worst, concave_points_worst, symmetry_worst, fractal_dimension_worst]])
                 if predicted_value[0] == 1:
                     prediction_text = "You Cancer type is Malignant"

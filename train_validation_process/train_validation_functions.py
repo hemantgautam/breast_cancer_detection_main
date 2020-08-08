@@ -63,7 +63,7 @@ class TrainValidationFunctions:
                         return True
                     else:
                         self.logger.info(
-                            "Type of columns are not similar in the dataset and schema.")
+                            "Type of columns are not similar in the dataset and schema. Please check the datatype of uploaded csv.")
                 except Exception as e:
                     self.logger.info(e)
                     self.logger.info(
@@ -122,7 +122,7 @@ class TrainValidationFunctions:
             self.logger.info("Error in storing DF in database")
             raise e
 
-    # function to create model from different algorithms and save best model's pickle file under "model/final_model/" folder which will be used for prediction
+    # function to create model from different algorithms and save best model's pickle file under "models/final_model/" folder which will be used for prediction
     def ModelSelection(self):
         self.logger.info("----------selectModel Starts----------")
         X = self.df.drop(columns=['id', 'diagnosis'], axis=1)
@@ -132,7 +132,7 @@ class TrainValidationFunctions:
         X_train, X_test, y_train, y_test = train_test_split(
             X, y, test_size=0.2, random_state=5)
 
-        # Creating models dict to run in a loop
+        # Creating models dictionary to run in a loop
         models = {"lr": LogisticRegression(), "rfc": RandomForestClassifier(
         ), "svc": SVC(), "knn": KNeighborsClassifier(n_neighbors=1)}
 
@@ -145,7 +145,7 @@ class TrainValidationFunctions:
                 pred = key.predict(X_test)
                 accuray = accuracy_score(y_test, pred)
                 model_acccuray[dict_key] = round(accuray*100, 2)
-                filename = 'model/' + dict_key + '_breast_cancer_model_' + \
+                filename = 'models/' + dict_key + '_breast_cancer_model_' + \
                     str(round(accuray*100, 2)) + '.pkl'
                 pickle.dump(key, open(filename, 'wb'))
                 self.logger.info(classification_report(y_test, pred))
@@ -158,8 +158,8 @@ class TrainValidationFunctions:
                 0][0] + '_breast_cancer_model_' + str(sorted(model_acccuray.items(), key=lambda x: x[1], reverse=True)[0][1]) + '.pkl'
 
             # cpoying the best pickle file from under model folder to model/final_model folder which will be used for prediction
-            copyfile("model/"+best_model_pkl_file,
-                     "model/final_model/best_pickle_file.pkl")
+            copyfile("models/"+best_model_pkl_file,
+                     "models/final_model/best_pickle_file.pkl")
 
             self.logger.info(best_model_pkl_file)
             self.logger.info("==========================Training  Completed==========================")
