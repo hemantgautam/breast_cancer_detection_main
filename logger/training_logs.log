@@ -1,0 +1,802 @@
+2020-08-09 12:46:00,626 - train_validation_process.train_validation - INFO - ==========================Training  Started==========================
+2020-08-09 12:46:00,709 - data_processing_functions - INFO - ---Shape Before deleting unnammed column---
+2020-08-09 12:46:00,709 - data_processing_functions - INFO - (569, 32)
+2020-08-09 12:46:00,750 - data_processing_functions - INFO - ---Shape After deleting unnammed column---
+2020-08-09 12:46:00,751 - data_processing_functions - INFO - (569, 32)
+2020-08-09 12:46:00,751 - data_processing_functions - INFO - ----------matchColumnsDetailsWithSchema Starts----------
+2020-08-09 12:46:00,761 - data_processing_functions - INFO - Number of columns are identical with equal columns in the dataset and schema.
+2020-08-09 12:46:00,761 - data_processing_functions - INFO - ----------removeNullValues Starts----------
+2020-08-09 12:46:00,762 - data_processing_functions - INFO - (569, 32)
+2020-08-09 12:46:00,762 - data_processing_functions - INFO - Null Values Count Before :
+2020-08-09 12:46:00,773 - data_processing_functions - INFO - id                         0
+diagnosis                  0
+radius_mean                0
+texture_mean               0
+perimeter_mean             0
+area_mean                  0
+smoothness_mean            0
+compactness_mean           0
+concavity_mean             0
+concave points_mean        0
+symmetry_mean              0
+fractal_dimension_mean     0
+radius_se                  0
+texture_se                 0
+perimeter_se               0
+area_se                    0
+smoothness_se              0
+compactness_se             0
+concavity_se               0
+concave points_se          0
+symmetry_se                0
+fractal_dimension_se       0
+radius_worst               0
+texture_worst              0
+perimeter_worst            0
+area_worst                 0
+smoothness_worst           0
+compactness_worst          0
+concavity_worst            0
+concave points_worst       0
+symmetry_worst             0
+fractal_dimension_worst    0
+dtype: int64
+2020-08-09 12:46:00,778 - data_processing_functions - INFO - Null Values Count After :
+2020-08-09 12:46:00,782 - data_processing_functions - INFO - id                         0
+diagnosis                  0
+radius_mean                0
+texture_mean               0
+perimeter_mean             0
+area_mean                  0
+smoothness_mean            0
+compactness_mean           0
+concavity_mean             0
+concave points_mean        0
+symmetry_mean              0
+fractal_dimension_mean     0
+radius_se                  0
+texture_se                 0
+perimeter_se               0
+area_se                    0
+smoothness_se              0
+compactness_se             0
+concavity_se               0
+concave points_se          0
+symmetry_se                0
+fractal_dimension_se       0
+radius_worst               0
+texture_worst              0
+perimeter_worst            0
+area_worst                 0
+smoothness_worst           0
+compactness_worst          0
+concavity_worst            0
+concave points_worst       0
+symmetry_worst             0
+fractal_dimension_worst    0
+dtype: int64
+2020-08-09 12:46:00,783 - data_processing_functions - INFO - ----------convertToDummies Starts----------
+2020-08-09 12:46:00,783 - data_processing_functions - INFO - Before Converting to Dummies
+2020-08-09 12:46:00,784 - data_processing_functions - INFO - 0    M
+1    M
+2    M
+3    M
+4    M
+Name: diagnosis, dtype: object
+2020-08-09 12:46:00,801 - data_processing_functions - INFO - After Converting to Dummies
+2020-08-09 12:46:00,802 - data_processing_functions - INFO - 0    1
+1    1
+2    1
+3    1
+4    1
+Name: diagnosis, dtype: int64
+2020-08-09 12:46:00,804 - data_processing_functions - INFO - ----------createFinalDataForTrainingModels Starts----------
+2020-08-09 12:46:00,865 - data_processing_functions - INFO - ----------storeFinalCsvToDatabase Starts----------
+2020-08-09 12:46:01,815 - data_processing_functions - INFO - ----------selectModel Starts----------
+2020-08-09 12:46:02,100 - data_processing_functions - INFO - [Errno 2] No such file or directory: 'models/lr_breast_cancer_model_95.61.pkl'
+2020-08-09 12:46:02,101 - data_processing_functions - INFO - Error in selecting model.
+2020-08-09 12:46:18,392 - train_validation_process.train_validation - INFO - ==========================Training  Started==========================
+2020-08-09 12:46:18,404 - data_processing_functions - INFO - ---Shape Before deleting unnammed column---
+2020-08-09 12:46:18,404 - data_processing_functions - INFO - (569, 32)
+2020-08-09 12:46:18,406 - data_processing_functions - INFO - ---Shape After deleting unnammed column---
+2020-08-09 12:46:18,406 - data_processing_functions - INFO - (569, 32)
+2020-08-09 12:46:18,407 - data_processing_functions - INFO - ----------matchColumnsDetailsWithSchema Starts----------
+2020-08-09 12:46:18,416 - data_processing_functions - INFO - Number of columns are identical with equal columns in the dataset and schema.
+2020-08-09 12:46:18,417 - data_processing_functions - INFO - ----------removeNullValues Starts----------
+2020-08-09 12:46:18,417 - data_processing_functions - INFO - (569, 32)
+2020-08-09 12:46:18,417 - data_processing_functions - INFO - Null Values Count Before :
+2020-08-09 12:46:18,420 - data_processing_functions - INFO - id                         0
+diagnosis                  0
+radius_mean                0
+texture_mean               0
+perimeter_mean             0
+area_mean                  0
+smoothness_mean            0
+compactness_mean           0
+concavity_mean             0
+concave points_mean        0
+symmetry_mean              0
+fractal_dimension_mean     0
+radius_se                  0
+texture_se                 0
+perimeter_se               0
+area_se                    0
+smoothness_se              0
+compactness_se             0
+concavity_se               0
+concave points_se          0
+symmetry_se                0
+fractal_dimension_se       0
+radius_worst               0
+texture_worst              0
+perimeter_worst            0
+area_worst                 0
+smoothness_worst           0
+compactness_worst          0
+concavity_worst            0
+concave points_worst       0
+symmetry_worst             0
+fractal_dimension_worst    0
+dtype: int64
+2020-08-09 12:46:18,424 - data_processing_functions - INFO - Null Values Count After :
+2020-08-09 12:46:18,427 - data_processing_functions - INFO - id                         0
+diagnosis                  0
+radius_mean                0
+texture_mean               0
+perimeter_mean             0
+area_mean                  0
+smoothness_mean            0
+compactness_mean           0
+concavity_mean             0
+concave points_mean        0
+symmetry_mean              0
+fractal_dimension_mean     0
+radius_se                  0
+texture_se                 0
+perimeter_se               0
+area_se                    0
+smoothness_se              0
+compactness_se             0
+concavity_se               0
+concave points_se          0
+symmetry_se                0
+fractal_dimension_se       0
+radius_worst               0
+texture_worst              0
+perimeter_worst            0
+area_worst                 0
+smoothness_worst           0
+compactness_worst          0
+concavity_worst            0
+concave points_worst       0
+symmetry_worst             0
+fractal_dimension_worst    0
+dtype: int64
+2020-08-09 12:46:18,427 - data_processing_functions - INFO - ----------convertToDummies Starts----------
+2020-08-09 12:46:18,427 - data_processing_functions - INFO - Before Converting to Dummies
+2020-08-09 12:46:18,428 - data_processing_functions - INFO - 0    M
+1    M
+2    M
+3    M
+4    M
+Name: diagnosis, dtype: object
+2020-08-09 12:46:18,433 - data_processing_functions - INFO - After Converting to Dummies
+2020-08-09 12:46:18,434 - data_processing_functions - INFO - 0    1
+1    1
+2    1
+3    1
+4    1
+Name: diagnosis, dtype: int64
+2020-08-09 12:46:18,436 - data_processing_functions - INFO - ----------createFinalDataForTrainingModels Starts----------
+2020-08-09 12:46:18,481 - data_processing_functions - INFO - ----------storeFinalCsvToDatabase Starts----------
+2020-08-09 12:46:18,742 - data_processing_functions - INFO - ----------selectModel Starts----------
+2020-08-09 12:46:18,823 - data_processing_functions - INFO - [Errno 2] No such file or directory: 'models/lr_breast_cancer_model_95.61.pkl'
+2020-08-09 12:46:18,824 - data_processing_functions - INFO - Error in selecting model.
+2020-08-09 12:46:58,369 - train_validation_process.train_validation - INFO - ==========================Training  Started==========================
+2020-08-09 12:46:58,382 - data_processing_functions - INFO - ---Shape Before deleting unnammed column---
+2020-08-09 12:46:58,382 - data_processing_functions - INFO - (569, 32)
+2020-08-09 12:46:58,384 - data_processing_functions - INFO - ---Shape After deleting unnammed column---
+2020-08-09 12:46:58,384 - data_processing_functions - INFO - (569, 32)
+2020-08-09 12:46:58,385 - data_processing_functions - INFO - ----------matchColumnsDetailsWithSchema Starts----------
+2020-08-09 12:46:58,395 - data_processing_functions - INFO - Number of columns are identical with equal columns in the dataset and schema.
+2020-08-09 12:46:58,395 - data_processing_functions - INFO - ----------removeNullValues Starts----------
+2020-08-09 12:46:58,395 - data_processing_functions - INFO - (569, 32)
+2020-08-09 12:46:58,396 - data_processing_functions - INFO - Null Values Count Before :
+2020-08-09 12:46:58,399 - data_processing_functions - INFO - id                         0
+diagnosis                  0
+radius_mean                0
+texture_mean               0
+perimeter_mean             0
+area_mean                  0
+smoothness_mean            0
+compactness_mean           0
+concavity_mean             0
+concave points_mean        0
+symmetry_mean              0
+fractal_dimension_mean     0
+radius_se                  0
+texture_se                 0
+perimeter_se               0
+area_se                    0
+smoothness_se              0
+compactness_se             0
+concavity_se               0
+concave points_se          0
+symmetry_se                0
+fractal_dimension_se       0
+radius_worst               0
+texture_worst              0
+perimeter_worst            0
+area_worst                 0
+smoothness_worst           0
+compactness_worst          0
+concavity_worst            0
+concave points_worst       0
+symmetry_worst             0
+fractal_dimension_worst    0
+dtype: int64
+2020-08-09 12:46:58,403 - data_processing_functions - INFO - Null Values Count After :
+2020-08-09 12:46:58,406 - data_processing_functions - INFO - id                         0
+diagnosis                  0
+radius_mean                0
+texture_mean               0
+perimeter_mean             0
+area_mean                  0
+smoothness_mean            0
+compactness_mean           0
+concavity_mean             0
+concave points_mean        0
+symmetry_mean              0
+fractal_dimension_mean     0
+radius_se                  0
+texture_se                 0
+perimeter_se               0
+area_se                    0
+smoothness_se              0
+compactness_se             0
+concavity_se               0
+concave points_se          0
+symmetry_se                0
+fractal_dimension_se       0
+radius_worst               0
+texture_worst              0
+perimeter_worst            0
+area_worst                 0
+smoothness_worst           0
+compactness_worst          0
+concavity_worst            0
+concave points_worst       0
+symmetry_worst             0
+fractal_dimension_worst    0
+dtype: int64
+2020-08-09 12:46:58,406 - data_processing_functions - INFO - ----------convertToDummies Starts----------
+2020-08-09 12:46:58,406 - data_processing_functions - INFO - Before Converting to Dummies
+2020-08-09 12:46:58,407 - data_processing_functions - INFO - 0    M
+1    M
+2    M
+3    M
+4    M
+Name: diagnosis, dtype: object
+2020-08-09 12:46:58,413 - data_processing_functions - INFO - After Converting to Dummies
+2020-08-09 12:46:58,413 - data_processing_functions - INFO - 0    1
+1    1
+2    1
+3    1
+4    1
+Name: diagnosis, dtype: int64
+2020-08-09 12:46:58,415 - data_processing_functions - INFO - ----------createFinalDataForTrainingModels Starts----------
+2020-08-09 12:46:58,460 - data_processing_functions - INFO - ----------storeFinalCsvToDatabase Starts----------
+2020-08-09 12:46:58,735 - data_processing_functions - INFO - ----------selectModel Starts----------
+2020-08-09 12:46:58,819 - data_processing_functions - INFO - [Errno 2] No such file or directory: 'models/lr_breast_cancer_model_95.61.pkl'
+2020-08-09 12:46:58,819 - data_processing_functions - INFO - Error in selecting model.
+2020-08-09 12:49:59,324 - train_validation_process.train_validation - INFO - ==========================Training  Started==========================
+2020-08-09 12:49:59,340 - data_processing_functions - INFO - ---Shape Before deleting unnammed column---
+2020-08-09 12:49:59,340 - data_processing_functions - INFO - (569, 32)
+2020-08-09 12:49:59,342 - data_processing_functions - INFO - ---Shape After deleting unnammed column---
+2020-08-09 12:49:59,343 - data_processing_functions - INFO - (569, 32)
+2020-08-09 12:49:59,343 - data_processing_functions - INFO - ----------matchColumnsDetailsWithSchema Starts----------
+2020-08-09 12:49:59,353 - data_processing_functions - INFO - Number of columns are identical with equal columns in the dataset and schema.
+2020-08-09 12:49:59,354 - data_processing_functions - INFO - ----------removeNullValues Starts----------
+2020-08-09 12:49:59,354 - data_processing_functions - INFO - (569, 32)
+2020-08-09 12:49:59,354 - data_processing_functions - INFO - Null Values Count Before :
+2020-08-09 12:49:59,357 - data_processing_functions - INFO - id                         0
+diagnosis                  0
+radius_mean                0
+texture_mean               0
+perimeter_mean             0
+area_mean                  0
+smoothness_mean            0
+compactness_mean           0
+concavity_mean             0
+concave points_mean        0
+symmetry_mean              0
+fractal_dimension_mean     0
+radius_se                  0
+texture_se                 0
+perimeter_se               0
+area_se                    0
+smoothness_se              0
+compactness_se             0
+concavity_se               0
+concave points_se          0
+symmetry_se                0
+fractal_dimension_se       0
+radius_worst               0
+texture_worst              0
+perimeter_worst            0
+area_worst                 0
+smoothness_worst           0
+compactness_worst          0
+concavity_worst            0
+concave points_worst       0
+symmetry_worst             0
+fractal_dimension_worst    0
+dtype: int64
+2020-08-09 12:49:59,361 - data_processing_functions - INFO - Null Values Count After :
+2020-08-09 12:49:59,364 - data_processing_functions - INFO - id                         0
+diagnosis                  0
+radius_mean                0
+texture_mean               0
+perimeter_mean             0
+area_mean                  0
+smoothness_mean            0
+compactness_mean           0
+concavity_mean             0
+concave points_mean        0
+symmetry_mean              0
+fractal_dimension_mean     0
+radius_se                  0
+texture_se                 0
+perimeter_se               0
+area_se                    0
+smoothness_se              0
+compactness_se             0
+concavity_se               0
+concave points_se          0
+symmetry_se                0
+fractal_dimension_se       0
+radius_worst               0
+texture_worst              0
+perimeter_worst            0
+area_worst                 0
+smoothness_worst           0
+compactness_worst          0
+concavity_worst            0
+concave points_worst       0
+symmetry_worst             0
+fractal_dimension_worst    0
+dtype: int64
+2020-08-09 12:49:59,364 - data_processing_functions - INFO - ----------convertToDummies Starts----------
+2020-08-09 12:49:59,364 - data_processing_functions - INFO - Before Converting to Dummies
+2020-08-09 12:49:59,365 - data_processing_functions - INFO - 0    M
+1    M
+2    M
+3    M
+4    M
+Name: diagnosis, dtype: object
+2020-08-09 12:49:59,371 - data_processing_functions - INFO - After Converting to Dummies
+2020-08-09 12:49:59,371 - data_processing_functions - INFO - 0    1
+1    1
+2    1
+3    1
+4    1
+Name: diagnosis, dtype: int64
+2020-08-09 12:49:59,373 - data_processing_functions - INFO - ----------createFinalDataForTrainingModels Starts----------
+2020-08-09 12:49:59,418 - data_processing_functions - INFO - ----------storeFinalCsvToDatabase Starts----------
+2020-08-09 12:50:00,350 - data_processing_functions - INFO - ----------selectModel Starts----------
+2020-08-09 12:50:00,454 - data_processing_functions - INFO - [Errno 2] No such file or directory: 'models/lr_breast_cancer_model_95.61.pkl'
+2020-08-09 12:50:00,454 - data_processing_functions - INFO - Error in selecting model.
+2020-08-09 12:51:50,086 - train_validation_process.train_validation - INFO - ==========================Training  Started==========================
+2020-08-09 12:51:50,099 - data_processing_functions - INFO - ---Shape Before deleting unnammed column---
+2020-08-09 12:51:50,099 - data_processing_functions - INFO - (569, 32)
+2020-08-09 12:51:50,101 - data_processing_functions - INFO - ---Shape After deleting unnammed column---
+2020-08-09 12:51:50,101 - data_processing_functions - INFO - (569, 32)
+2020-08-09 12:51:50,102 - data_processing_functions - INFO - ----------matchColumnsDetailsWithSchema Starts----------
+2020-08-09 12:51:50,111 - data_processing_functions - INFO - Number of columns are identical with equal columns in the dataset and schema.
+2020-08-09 12:51:50,112 - data_processing_functions - INFO - ----------removeNullValues Starts----------
+2020-08-09 12:51:50,112 - data_processing_functions - INFO - (569, 32)
+2020-08-09 12:51:50,113 - data_processing_functions - INFO - Null Values Count Before :
+2020-08-09 12:51:50,116 - data_processing_functions - INFO - id                         0
+diagnosis                  0
+radius_mean                0
+texture_mean               0
+perimeter_mean             0
+area_mean                  0
+smoothness_mean            0
+compactness_mean           0
+concavity_mean             0
+concave points_mean        0
+symmetry_mean              0
+fractal_dimension_mean     0
+radius_se                  0
+texture_se                 0
+perimeter_se               0
+area_se                    0
+smoothness_se              0
+compactness_se             0
+concavity_se               0
+concave points_se          0
+symmetry_se                0
+fractal_dimension_se       0
+radius_worst               0
+texture_worst              0
+perimeter_worst            0
+area_worst                 0
+smoothness_worst           0
+compactness_worst          0
+concavity_worst            0
+concave points_worst       0
+symmetry_worst             0
+fractal_dimension_worst    0
+dtype: int64
+2020-08-09 12:51:50,119 - data_processing_functions - INFO - Null Values Count After :
+2020-08-09 12:51:50,123 - data_processing_functions - INFO - id                         0
+diagnosis                  0
+radius_mean                0
+texture_mean               0
+perimeter_mean             0
+area_mean                  0
+smoothness_mean            0
+compactness_mean           0
+concavity_mean             0
+concave points_mean        0
+symmetry_mean              0
+fractal_dimension_mean     0
+radius_se                  0
+texture_se                 0
+perimeter_se               0
+area_se                    0
+smoothness_se              0
+compactness_se             0
+concavity_se               0
+concave points_se          0
+symmetry_se                0
+fractal_dimension_se       0
+radius_worst               0
+texture_worst              0
+perimeter_worst            0
+area_worst                 0
+smoothness_worst           0
+compactness_worst          0
+concavity_worst            0
+concave points_worst       0
+symmetry_worst             0
+fractal_dimension_worst    0
+dtype: int64
+2020-08-09 12:51:50,123 - data_processing_functions - INFO - ----------convertToDummies Starts----------
+2020-08-09 12:51:50,124 - data_processing_functions - INFO - Before Converting to Dummies
+2020-08-09 12:51:50,125 - data_processing_functions - INFO - 0    M
+1    M
+2    M
+3    M
+4    M
+Name: diagnosis, dtype: object
+2020-08-09 12:51:50,129 - data_processing_functions - INFO - After Converting to Dummies
+2020-08-09 12:51:50,130 - data_processing_functions - INFO - 0    1
+1    1
+2    1
+3    1
+4    1
+Name: diagnosis, dtype: int64
+2020-08-09 12:51:50,132 - data_processing_functions - INFO - ----------createFinalDataForTrainingModels Starts----------
+2020-08-09 12:51:50,176 - data_processing_functions - INFO - ----------storeFinalCsvToDatabase Starts----------
+2020-08-09 12:51:50,447 - data_processing_functions - INFO - ----------selectModel Starts----------
+2020-08-09 12:51:50,530 - data_processing_functions - INFO - [Errno 2] No such file or directory: 'models/lr_breast_cancer_model_95.61.pkl'
+2020-08-09 12:51:50,530 - data_processing_functions - INFO - Error in selecting model.
+2020-08-09 14:16:16,134 - train_validation_process.train_validation - INFO - ==========================Training  Started==========================
+2020-08-09 14:16:16,153 - data_processing_functions - INFO - ---Shape Before deleting unnammed column---
+2020-08-09 14:16:16,153 - data_processing_functions - INFO - (569, 32)
+2020-08-09 14:16:16,156 - data_processing_functions - INFO - ---Shape After deleting unnammed column---
+2020-08-09 14:16:16,156 - data_processing_functions - INFO - (569, 32)
+2020-08-09 14:16:16,157 - data_processing_functions - INFO - ----------matchColumnsDetailsWithSchema Starts----------
+2020-08-09 14:16:16,167 - data_processing_functions - INFO - Number of columns are identical with equal columns in the dataset and schema.
+2020-08-09 14:16:16,168 - data_processing_functions - INFO - ----------removeNullValues Starts----------
+2020-08-09 14:16:16,168 - data_processing_functions - INFO - (569, 32)
+2020-08-09 14:16:16,169 - data_processing_functions - INFO - Null Values Count Before :
+2020-08-09 14:16:16,172 - data_processing_functions - INFO - id                         0
+diagnosis                  0
+radius_mean                0
+texture_mean               0
+perimeter_mean             0
+area_mean                  0
+smoothness_mean            0
+compactness_mean           0
+concavity_mean             0
+concave points_mean        0
+symmetry_mean              0
+fractal_dimension_mean     0
+radius_se                  0
+texture_se                 0
+perimeter_se               0
+area_se                    0
+smoothness_se              0
+compactness_se             0
+concavity_se               0
+concave points_se          0
+symmetry_se                0
+fractal_dimension_se       0
+radius_worst               0
+texture_worst              0
+perimeter_worst            0
+area_worst                 0
+smoothness_worst           0
+compactness_worst          0
+concavity_worst            0
+concave points_worst       0
+symmetry_worst             0
+fractal_dimension_worst    0
+dtype: int64
+2020-08-09 14:16:16,179 - data_processing_functions - INFO - Null Values Count After :
+2020-08-09 14:16:16,183 - data_processing_functions - INFO - id                         0
+diagnosis                  0
+radius_mean                0
+texture_mean               0
+perimeter_mean             0
+area_mean                  0
+smoothness_mean            0
+compactness_mean           0
+concavity_mean             0
+concave points_mean        0
+symmetry_mean              0
+fractal_dimension_mean     0
+radius_se                  0
+texture_se                 0
+perimeter_se               0
+area_se                    0
+smoothness_se              0
+compactness_se             0
+concavity_se               0
+concave points_se          0
+symmetry_se                0
+fractal_dimension_se       0
+radius_worst               0
+texture_worst              0
+perimeter_worst            0
+area_worst                 0
+smoothness_worst           0
+compactness_worst          0
+concavity_worst            0
+concave points_worst       0
+symmetry_worst             0
+fractal_dimension_worst    0
+dtype: int64
+2020-08-09 14:16:16,185 - data_processing_functions - INFO - ----------convertToDummies Starts----------
+2020-08-09 14:16:16,186 - data_processing_functions - INFO - Before Converting to Dummies
+2020-08-09 14:16:16,194 - data_processing_functions - INFO - 0    M
+1    M
+2    M
+3    M
+4    M
+Name: diagnosis, dtype: object
+2020-08-09 14:16:16,201 - data_processing_functions - INFO - After Converting to Dummies
+2020-08-09 14:16:16,201 - data_processing_functions - INFO - 0    1
+1    1
+2    1
+3    1
+4    1
+Name: diagnosis, dtype: int64
+2020-08-09 14:16:16,205 - data_processing_functions - INFO - ----------createFinalDataForTrainingModels Starts----------
+2020-08-09 14:16:16,254 - data_processing_functions - INFO - ----------storeFinalCsvToDatabase Starts----------
+2020-08-09 14:16:17,338 - data_processing_functions - INFO - ----------selectModel Starts----------
+2020-08-09 14:16:17,467 - data_processing_functions - INFO - [Errno 2] No such file or directory: 'models/lr_breast_cancer_model_95.61.pkl'
+2020-08-09 14:16:17,468 - data_processing_functions - INFO - Error in selecting model.
+2020-08-09 14:36:05,281 - train_validation_process.train_validation - INFO - ==========================Training  Started==========================
+2020-08-09 14:36:05,297 - data_processing_functions - INFO - ---Shape Before deleting unnammed column---
+2020-08-09 14:36:05,297 - data_processing_functions - INFO - (569, 32)
+2020-08-09 14:36:05,300 - data_processing_functions - INFO - ---Shape After deleting unnammed column---
+2020-08-09 14:36:05,301 - data_processing_functions - INFO - (569, 32)
+2020-08-09 14:36:05,301 - data_processing_functions - INFO - ----------matchColumnsDetailsWithSchema Starts----------
+2020-08-09 14:36:05,316 - data_processing_functions - INFO - Number of columns are identical with equal columns in the dataset and schema.
+2020-08-09 14:36:05,316 - data_processing_functions - INFO - ----------removeNullValues Starts----------
+2020-08-09 14:36:05,317 - data_processing_functions - INFO - (569, 32)
+2020-08-09 14:36:05,318 - data_processing_functions - INFO - Null Values Count Before :
+2020-08-09 14:36:05,322 - data_processing_functions - INFO - id                         0
+diagnosis                  0
+radius_mean                0
+texture_mean               0
+perimeter_mean             0
+area_mean                  0
+smoothness_mean            0
+compactness_mean           0
+concavity_mean             0
+concave points_mean        0
+symmetry_mean              0
+fractal_dimension_mean     0
+radius_se                  0
+texture_se                 0
+perimeter_se               0
+area_se                    0
+smoothness_se              0
+compactness_se             0
+concavity_se               0
+concave points_se          0
+symmetry_se                0
+fractal_dimension_se       0
+radius_worst               0
+texture_worst              0
+perimeter_worst            0
+area_worst                 0
+smoothness_worst           0
+compactness_worst          0
+concavity_worst            0
+concave points_worst       0
+symmetry_worst             0
+fractal_dimension_worst    0
+dtype: int64
+2020-08-09 14:36:05,336 - data_processing_functions - INFO - Null Values Count After :
+2020-08-09 14:36:05,342 - data_processing_functions - INFO - id                         0
+diagnosis                  0
+radius_mean                0
+texture_mean               0
+perimeter_mean             0
+area_mean                  0
+smoothness_mean            0
+compactness_mean           0
+concavity_mean             0
+concave points_mean        0
+symmetry_mean              0
+fractal_dimension_mean     0
+radius_se                  0
+texture_se                 0
+perimeter_se               0
+area_se                    0
+smoothness_se              0
+compactness_se             0
+concavity_se               0
+concave points_se          0
+symmetry_se                0
+fractal_dimension_se       0
+radius_worst               0
+texture_worst              0
+perimeter_worst            0
+area_worst                 0
+smoothness_worst           0
+compactness_worst          0
+concavity_worst            0
+concave points_worst       0
+symmetry_worst             0
+fractal_dimension_worst    0
+dtype: int64
+2020-08-09 14:36:05,345 - data_processing_functions - INFO - ----------convertToDummies Starts----------
+2020-08-09 14:36:05,346 - data_processing_functions - INFO - Before Converting to Dummies
+2020-08-09 14:36:05,355 - data_processing_functions - INFO - 0    M
+1    M
+2    M
+3    M
+4    M
+Name: diagnosis, dtype: object
+2020-08-09 14:36:05,365 - data_processing_functions - INFO - After Converting to Dummies
+2020-08-09 14:36:05,366 - data_processing_functions - INFO - 0    1
+1    1
+2    1
+3    1
+4    1
+Name: diagnosis, dtype: int64
+2020-08-09 14:36:05,369 - data_processing_functions - INFO - ----------createFinalDataForTrainingModels Starts----------
+2020-08-09 14:36:05,430 - data_processing_functions - INFO - ----------storeFinalCsvToDatabase Starts----------
+2020-08-09 14:36:06,317 - data_processing_functions - INFO - ----------selectModel Starts----------
+2020-08-09 14:36:06,433 - data_processing_functions - INFO -               precision    recall  f1-score   support
+
+           0       0.93      1.00      0.96        66
+           1       1.00      0.90      0.95        48
+
+    accuracy                           0.96       114
+   macro avg       0.96      0.95      0.95       114
+weighted avg       0.96      0.96      0.96       114
+
+2020-08-09 14:36:06,436 - data_processing_functions - INFO - [[66  0]
+ [ 5 43]]
+2020-08-09 14:36:06,991 - data_processing_functions - INFO -               precision    recall  f1-score   support
+
+           0       0.96      0.98      0.97        66
+           1       0.98      0.94      0.96        48
+
+    accuracy                           0.96       114
+   macro avg       0.97      0.96      0.96       114
+weighted avg       0.97      0.96      0.96       114
+
+2020-08-09 14:36:06,995 - data_processing_functions - INFO - [[65  1]
+ [ 3 45]]
+2020-08-09 14:36:07,022 - data_processing_functions - INFO -               precision    recall  f1-score   support
+
+           0       0.90      1.00      0.95        66
+           1       1.00      0.85      0.92        48
+
+    accuracy                           0.94       114
+   macro avg       0.95      0.93      0.94       114
+weighted avg       0.94      0.94      0.94       114
+
+2020-08-09 14:36:07,025 - data_processing_functions - INFO - [[66  0]
+ [ 7 41]]
+2020-08-09 14:36:07,067 - data_processing_functions - INFO -               precision    recall  f1-score   support
+
+           0       0.92      1.00      0.96        66
+           1       1.00      0.88      0.93        48
+
+    accuracy                           0.95       114
+   macro avg       0.96      0.94      0.94       114
+weighted avg       0.95      0.95      0.95       114
+
+2020-08-09 14:36:07,069 - data_processing_functions - INFO - [[66  0]
+ [ 6 42]]
+2020-08-09 14:36:07,070 - data_processing_functions - INFO - Model Accuray
+2020-08-09 14:36:07,071 - data_processing_functions - INFO - {'lr': 95.61, 'rfc': 96.49, 'svc': 93.86, 'knn': 94.74}
+2020-08-09 14:36:07,078 - data_processing_functions - INFO - rfc_breast_cancer_model_96.49.pkl
+2020-08-09 14:36:07,079 - data_processing_functions - INFO - ==========================Training  Completed==========================
+2020-08-09 14:37:05,629 - data_processing_functions - INFO - ---Shape Before deleting unnammed column---
+2020-08-09 14:37:05,630 - data_processing_functions - INFO - (569, 31)
+2020-08-09 14:37:05,632 - data_processing_functions - INFO - ---Shape After deleting unnammed column---
+2020-08-09 14:37:05,635 - data_processing_functions - INFO - (569, 31)
+2020-08-09 14:37:05,636 - data_processing_functions - INFO - ----------matchColumnsDetailsWithSchema Starts----------
+2020-08-09 14:37:05,645 - data_processing_functions - INFO - Number of columns are identical with equal columns in the dataset and schema.
+2020-08-09 14:37:05,646 - data_processing_functions - INFO - ----------removeNullValues Starts----------
+2020-08-09 14:37:05,646 - data_processing_functions - INFO - (569, 31)
+2020-08-09 14:37:05,647 - data_processing_functions - INFO - Null Values Count Before :
+2020-08-09 14:37:05,650 - data_processing_functions - INFO - id                         0
+radius_mean                0
+texture_mean               0
+perimeter_mean             0
+area_mean                  0
+smoothness_mean            0
+compactness_mean           0
+concavity_mean             0
+concave points_mean        0
+symmetry_mean              0
+fractal_dimension_mean     0
+radius_se                  0
+texture_se                 0
+perimeter_se               0
+area_se                    0
+smoothness_se              0
+compactness_se             0
+concavity_se               0
+concave points_se          0
+symmetry_se                0
+fractal_dimension_se       0
+radius_worst               0
+texture_worst              0
+perimeter_worst            0
+area_worst                 0
+smoothness_worst           0
+compactness_worst          0
+concavity_worst            0
+concave points_worst       0
+symmetry_worst             0
+fractal_dimension_worst    0
+dtype: int64
+2020-08-09 14:37:05,655 - data_processing_functions - INFO - Null Values Count After :
+2020-08-09 14:37:05,658 - data_processing_functions - INFO - id                         0
+radius_mean                0
+texture_mean               0
+perimeter_mean             0
+area_mean                  0
+smoothness_mean            0
+compactness_mean           0
+concavity_mean             0
+concave points_mean        0
+symmetry_mean              0
+fractal_dimension_mean     0
+radius_se                  0
+texture_se                 0
+perimeter_se               0
+area_se                    0
+smoothness_se              0
+compactness_se             0
+concavity_se               0
+concave points_se          0
+symmetry_se                0
+fractal_dimension_se       0
+radius_worst               0
+texture_worst              0
+perimeter_worst            0
+area_worst                 0
+smoothness_worst           0
+compactness_worst          0
+concavity_worst            0
+concave points_worst       0
+symmetry_worst             0
+fractal_dimension_worst    0
+dtype: int64
+2020-08-09 14:37:05,658 - data_processing_functions - INFO - ----------predictValues Starts----------
+2020-08-09 14:37:05,660 - data_processing_functions - INFO - (569, 30)
+2020-08-09 14:37:19,071 - data_processing_functions - INFO - ==========================Prediction Completed==========================
