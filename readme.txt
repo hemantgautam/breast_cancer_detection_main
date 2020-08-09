@@ -16,7 +16,7 @@ Features -
 		b. based on the accuracy best pickle file will be renamed as "best_pickle_file.pkl" and moved inside models/final_model directory
 
 2. Predicting the values in three ways - 
-		a. Single record prediction from UI(single_record_predition.py)
+		a. Single record prediction from UI(single_record_prediction.py)
 		b. Single record prediction from Json
 		c. Csv upload data prediction
 

@@ -9,7 +9,7 @@ from logger.logconfig import getlogger
 from train_validation_process.train_validation import TrainValidation
 from predict_validation_process.predict_validation import PredictValidation
 from dbConnection.mongo import DatabaseConnect
-from single_record_predition import SingleRecordPrediction
+from single_record_prediction import SingleRecordPrediction
 
 # Flask app initialization
 app = Flask(__name__)
