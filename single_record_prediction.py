@@ -56,7 +56,7 @@ def SingleRecordPrediction(request_type, request_body):
                     logger.info(e)
                     return jsonify(res)
                 else:
-                    return render_template('index.html', error_text=e)
+                    return render_template('index.html', error_message=e)
         try:
 
             # loading the best pickle file to predict data
@@ -80,7 +80,7 @@ def SingleRecordPrediction(request_type, request_body):
                 return jsonify(res)
             else:
                 logger.info(prediction_text)
-                return render_template('index.html', prediction_text="{}".format(prediction_text))
+                return render_template('index.html', success_message="{}".format(prediction_text))
         
         except Exception as e:
 
@@ -90,7 +90,7 @@ def SingleRecordPrediction(request_type, request_body):
                 logger.info(e)
                 return jsonify(res)
             else:            
-                return render_template('index.html', error_text=e)
+                return render_template('index.html', error_message=e)
     
     else:
         if request_type == "json":
@@ -98,4 +98,4 @@ def SingleRecordPrediction(request_type, request_body):
             logger.info(res)
             return jsonify(res)
         else:
-            return render_template("index.html", file_error=True)
+            return render_template("index.html", error_message=True)

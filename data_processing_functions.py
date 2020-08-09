@@ -202,7 +202,7 @@ class DataProcessingFunctions:
                     {"pid": int(pid[row]), "cancer_type": int(predict_value[0]), "TimeStamp":now.strftime("%d-%b-%Y %H:%M:%S")})
 
             df = pd.DataFrame(result_list, index=None)
-
+            
             # Storing all the predicted values into Database
             db_conn.storePredictedResult(df)
 

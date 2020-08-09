@@ -5,35 +5,16 @@
             <br>
                 <h2>Breast Cancer Prediction</h2>
             <br>
-                {% if model_training_success %}
-                        <div class="alert alert-success" role="alert">
-                          <h3>Model training successful. Start predicting.</h3>
-                        </div>
-                    {% elif model_training_failure == False %}
-                        <div class="alert alert-danger" role="alert">
-                         <h3>Model training failed. Please check the logs</h3>
-                        </div>
-                {% endif %}
-                {% if prediction_text %}
+ 
+                {% if success_message %}
                 <div class="alert alert-success" role="alert">
-                  {{ prediction_text }}
+                    <h4>{{ success_message }}</h4>
                 </div>
                 {% endif %}
-                {% if error_text %}
+                {% if error_message %}
                 <div class="alert alert-danger" role="alert">
-                  {{ error_text }}
+                    <h4>{{ error_message }}</h4>
                 </div>
-                {% endif %}
-                {% if file_error %}
-                <div class="alert alert-danger" role="alert">
-                  No model present. Please train the model first.
-                </div>
-                {% endif %}
-                {% if predict_result %}
-                <div class="alert alert-success" role="alert">
-                    <h4>Prediction successfully completed. Please check result in "Predicted Results" link.</h4>
-                </div>
-                              
                 {% endif %}
             <div class="form-row 1">
                 <div class="form-group col-md-2">

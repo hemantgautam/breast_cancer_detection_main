@@ -26,10 +26,7 @@ def index():
         return render_template('index.html')
 
     elif request.method == 'POST':
-        if request.json is not None:
-            return SingleRecordPrediction("json", request.json)
-        else:
-            return SingleRecordPrediction("form", request.form)
+        return SingleRecordPrediction("form", request.form)
 
 
 # API for training models using postman/insomania software
@@ -41,6 +38,11 @@ def trainValidationAPI():
         return jsonify({'message': 'Model training successful. Start predicting from web application.'})
     else:
         return jsonify({'message': 'Model training fails. Please check the training logs.'})
+
+@app.route("/predict-api", methods=['POST'])
+def predict_api():
+    return SingleRecordPrediction("json", request.json)
+    
 
 
 # function to predict csv file data and store result into database
@@ -60,11 +62,16 @@ def predictValidation():
                 df = pd.read_csv("predict_csv_uploads/" + filename, encoding='ISO-8859-1')
                 predObject = PredictValidation(df)
                 response = predObject.predict_validation()
-                return render_template("index.html", predict_result=response)
+                if response is True:
+                    return render_template("index.html", success_message="Prediction successfully completed. Please check result in 'Predicted Results' link.")
+                else:
+                    return render_template("index.html", error_message="Data Prediction Failed. Please check the predicton logs.")
+            else:
+                return render_template("index.html", error_message="File type should be CSV")
         else:
             return redirect("/")
     else:
-        return render_template("index.html", file_error=True)
+        return render_template("index.html", error_message="No model present. Please train the model first.")
 
 
 # function to show all csv predicted data in tabuler data
@@ -76,7 +83,7 @@ def predictedResult():
         return render_template("predicted-results.html", predicted_result=result)
 
     except Exception as e:
-        self.logger.info(e)
+        logger.info(e)
         raise e
 
 
