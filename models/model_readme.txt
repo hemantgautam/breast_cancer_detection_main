@@ -1,1 +1,2 @@
-This models folder contains all the pickle files based on the selected algorithms and best pickle file will be copied inside final_model based on the accuray.
+This is the most important directory in complete project.
+This directory contains all the pickle files based on the selected algorithms and best pickle file will be copied inside final_model based on the accuracy.
