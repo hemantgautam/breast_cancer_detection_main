@@ -10,7 +10,7 @@ from sklearn.metrics import classification_report, confusion_matrix, accuracy_sc
 import pickle
 from dbConnection.mongo import DatabaseConnect
 from shutil import copyfile
-from datetime import datetime
+import time
 
 # initilizing DB connection
 db_conn = DatabaseConnect()
@@ -190,7 +190,9 @@ class DataProcessingFunctions:
         try:
             filename = 'models/final_model/best_pickle_file.pkl'
             model = pickle.load(open(filename, 'rb'))
-            now = datetime.now()
+            curr_time = time.localtime() 
+            curr_clock = time.strftime("%d-%b-%Y %H:%M:%S", curr_time)
+
             for row in range(dfrows):
                 value_lst.clear()
                 for value in X.iloc[row]:
@@ -199,10 +201,10 @@ class DataProcessingFunctions:
 
                 # storing all the predictions(pid, cancer_type) in list
                 result_list.append(
-                    {"pid": int(pid[row]), "cancer_type": int(predict_value[0]), "TimeStamp":now.strftime("%d-%b-%Y %H:%M:%S")})
+                    {"pid": int(pid[row]), "cancer_type": int(predict_value[0]), "TimeStamp": curr_clock})
 
             df = pd.DataFrame(result_list, index=None)
-            
+
             # Storing all the predicted values into Database
             db_conn.storePredictedResult(df)
 
