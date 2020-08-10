@@ -11,11 +11,19 @@
                     <h4>{{ success_message }}</h4>
                 </div>
                 {% endif %}
+
+                {% if pred_success_message %}
+                    <div class="alert alert-success" role="alert">
+                        <h4>Prediction successfully completed. Please check 'Predicted Results' link or <a href='/predicted-results-download'>click here</a> to download result.</h4>
+                    </div>
+                {% endif %}
+
                 {% if error_message %}
                 <div class="alert alert-danger" role="alert">
                     <h4>{{ error_message }}</h4>
                 </div>
                 {% endif %}
+
             <div class="form-row 1">
                 <div class="form-group col-md-2">
                     <input placeholder="radius_mean" type="text" class="form-control" name="radius_mean" required>

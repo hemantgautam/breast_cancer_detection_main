@@ -61,7 +61,7 @@ def SingleRecordPrediction(request_type, request_body):
                 if request_type == "json":
                     logger.info(e)
                     res = {"error": "Error in entered key/values. Please check prediction logs."}
-                    return jsonify(res)
+                    return jsonify(res) 
                 else:
                     return render_template('index.html', error_message=e)
         try:

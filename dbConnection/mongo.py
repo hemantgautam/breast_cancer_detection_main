@@ -42,7 +42,7 @@ class DatabaseConnect():
     # function to store predicted results(id and cancer type) into Database
     def storePredictedResult(self, df):
         collection = self.db['predicted_result']
-        collection.remove()
+        # collection.remove()
         data_dict = df.to_dict("records")
         collection.insert_many(data_dict)
 

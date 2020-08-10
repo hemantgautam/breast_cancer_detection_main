@@ -11,7 +11,9 @@ from predict_validation_process.predict_validation import PredictValidation
 from dbConnection.mongo import DatabaseConnect
 from single_record_prediction import SingleRecordPrediction
 import configparser
-
+import time
+import atexit
+from prediction_scheduler import PredictScheduler
 
 # Flask app initialization
 app = Flask(__name__)
@@ -74,7 +76,7 @@ def predictValidation():
                 predObject = PredictValidation(df)
                 response = predObject.predict_validation()
                 if response is True:
-                    return render_template("index.html", success_message="Prediction successfully completed. Please check result in 'Predicted Results' link.")
+                    return render_template("index.html", pred_success_message=True)
                 else:
                     return render_template("index.html", error_message="Data Prediction Failed. Please check the predicton logs.")
             else:
@@ -97,6 +99,20 @@ def predictedResult():
         logger.info(e)
         raise e
 
- 
+
+# function to download predicted result from database
+@app.route("/predicted-results-download", methods=['GET'])
+def downloadPredictedCsv():
+    db_conn = DatabaseConnect()
+    cursor = db_conn.fetchPredictedResults()
+    
+    # Expand the cursor and construct the DataFrame
+    df =  pd.DataFrame(list(cursor))
+    curr_time = time.localtime() 
+    curr_clock = time.strftime("%d-%b-%Y %H:%M", curr_time)
+    return Response(df.to_csv(), mimetype="text/csv", headers={"Content-disposition":
+       "attachment; filename=predicted_result_"+ curr_clock + ".csv"})
+
+
 if __name__ == '__main__':
     app.run(debug=True)
