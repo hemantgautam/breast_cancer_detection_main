@@ -13,7 +13,7 @@ from single_record_prediction import SingleRecordPrediction
 import configparser
 import time
 import atexit
-from prediction_scheduler import PredictScheduler
+# from prediction_scheduler import PredictScheduler
 
 # Flask app initialization
 app = Flask(__name__)
