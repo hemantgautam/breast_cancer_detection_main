@@ -2,6 +2,12 @@ import pymongo
 import json
 import pandas as pd
 import csv
+import configparser
+
+# Initilization the object of ConfigParser 
+config = configparser.ConfigParser()
+config.read('./config/bcconfig.ini')
+mongo_connection = config['db_Connection']['mongo_connection']
 
 # Class for all CURD operations on MongoDB
 class DatabaseConnect():
@@ -10,8 +16,7 @@ class DatabaseConnect():
         # Exception handling if connection with mongodb fails
         try:
             # Connection string for MongoDB
-            client = pymongo.MongoClient(
-                "mongodb+srv://admin:admin@breastcancerdetection.h1ao7.mongodb.net/breast_cancer_detection?retryWrites=true&w=majority")
+            client = pymongo.MongoClient(mongo_connection)
 
             # "breast_cancer_detection" is the Database Name
             self.db = client['breast_cancer_detection']

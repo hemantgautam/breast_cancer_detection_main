@@ -11,9 +11,18 @@ import pickle
 from dbConnection.mongo import DatabaseConnect
 from shutil import copyfile
 import time
+import configparser
 
 # initilizing DB connection
 db_conn = DatabaseConnect()
+
+# Initilization the object of ConfigParser 
+config = configparser.ConfigParser()
+config.read('./config/bcconfig.ini')
+
+best_pickle_file_path = config['models']['best_pickle_file_path']
+train_csv_file_path = config['models']['train_csv_file_path']
+train_csv_path_after_all_validations = config['models']['train_csv_path_after_all_validations']
 
 # class for creating all training methods
 class DataProcessingFunctions:
@@ -30,7 +39,7 @@ class DataProcessingFunctions:
             self.schema_path = 'schema_training.json'
 
             # Reading trainings csv file to perform training
-            self.df = pd.read_csv('train_test_data/breast_cancer_dataset.csv')
+            self.df = pd.read_csv(train_csv_file_path)
         
         elif process_type == "prediction":
             self.schema_path = 'schema_prediction.json'
@@ -115,7 +124,7 @@ class DataProcessingFunctions:
             self.logger.info(
                 "----------createFinalDataForTrainingModels Starts----------")
             self.df.to_csv(
-                'train_test_data/final_data_for_model/final_data.csv', index=False)
+                train_csv_path_after_all_validations, index=False)
         except Exception as e:
             self.logger.info(e)
             raise e
@@ -167,8 +176,7 @@ class DataProcessingFunctions:
                 0][0] + '_breast_cancer_model_' + str(sorted(model_acccuray.items(), key=lambda x: x[1], reverse=True)[0][1]) + '.pkl'
 
             # cpoying the best pickle file from under model folder to model/final_model folder which will be used for prediction
-            copyfile("models/"+best_model_pkl_file,
-                     "models/final_model/best_pickle_file.pkl")
+            copyfile("models/"+best_model_pkl_file, best_pickle_file_path)
 
             self.logger.info(best_model_pkl_file)
             self.logger.info("==========================Training  Completed==========================")
@@ -188,7 +196,7 @@ class DataProcessingFunctions:
         value_lst = []
         result_list = []
         try:
-            filename = 'models/final_model/best_pickle_file.pkl'
+            filename = best_pickle_file_path
             model = pickle.load(open(filename, 'rb'))
             curr_time = time.localtime() 
             curr_clock = time.strftime("%d-%b-%Y %H:%M:%S", curr_time)

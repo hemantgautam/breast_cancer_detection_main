@@ -1,5 +1,12 @@
 from logger.logconfig import getlogger
 from data_processing_functions import DataProcessingFunctions
+import configparser
+
+# Initilization the object of ConfigParser 
+config = configparser.ConfigParser()
+config.read('./config/bcconfig.ini')
+
+training_logger = config['logger_files']['training_logger']
 
 # Class to call all Training methods under "train_validation" function
 class TrainValidation:
@@ -8,12 +15,12 @@ class TrainValidation:
 
         # initializing logger file for training
         self.logger = getlogger(
-            __name__, './logger/training_logs.log', consoleHandlerrequired=True)
+            __name__, './logger/' + training_logger, consoleHandlerrequired=True)
         self.logger.info(
             "==========================Training  Started==========================")
 
         # Creating object of DataProcessingFunctions class
-        self.data_process_funs = DataProcessingFunctions("training_logs.log", "training")
+        self.data_process_funs = DataProcessingFunctions(training_logger, "training")
 
     # Main function which calls each training function one by one
     def train_validation(self):
