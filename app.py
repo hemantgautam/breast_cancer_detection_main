@@ -13,19 +13,19 @@ from single_record_prediction import SingleRecordPrediction
 import configparser
 import time
 import atexit
-# from prediction_scheduler import PredictScheduler
-
+from prediction_scheduler import PredictScheduler
+import config
 # Flask app initialization
 app = Flask(__name__)
 CORS(app, supports_credentials=True)
 
 # Initilization the object of ConfigParser 
-config = configparser.ConfigParser()
-config.read('./config/bcconfig.ini')
+configs = configparser.ConfigParser()
+configs.read('./config/bcconfig.ini')
 
-prediction_logger = config['logger_files']['prediction_logger']
-training_logger = config['logger_files']['training_logger']
-best_pickle_file_path = config['models']['best_pickle_file_path']
+prediction_logger = configs['logger_files']['prediction_logger']
+training_logger = configs['logger_files']['training_logger']
+best_pickle_file_path = configs['models']['best_pickle_file_path']
 
 
 # Logger file for prediction
@@ -115,4 +115,4 @@ def downloadPredictedCsv():
 
 
 if __name__ == '__main__':
-    app.run(host = '0.0.0.0', port = 8080)
+    app.run(host="0.0.0.0", port=config.PORT, debug=config.DEBUG_MODE)
