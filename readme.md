@@ -13,7 +13,7 @@ Their are two type of cancer given in training Data -
 
 First models are getting trained on train and test data and best model is chosen based on the accuracy and that model is used for prediction.
 
-### Feature
+### Features
 1. Training the model with api(/breast-cancer-api/train) using postman/insomania.
 		a. Training will create 4 pickle files inside models/ directory
 		b. based on the accuracy best pickle file will be renamed as "best_pickle_file.pkl" and moved inside models/final_model directory
