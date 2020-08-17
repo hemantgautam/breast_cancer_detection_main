@@ -36,6 +36,8 @@ logger = getlogger(app.name, './logger/' + prediction_logger, consoleHandlerrequ
 @app.route("/", methods=['GET', 'POST'])
 def index():
     if request.method == 'GET':
+        # db_conn = DatabaseConnect()
+        # db_conn.fetchPredictedResults()
         return render_template('index.html')
 
     elif request.method == 'POST':

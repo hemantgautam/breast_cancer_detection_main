@@ -1,0 +1,320 @@
+2020-08-12 17:25:48,825 - prediction_scheduler - INFO - ================Prediction Scheduler Started================
+2020-08-12 17:25:48,875 - data_processing_functions - INFO - ---Shape Before deleting unnammed column---
+2020-08-12 17:25:48,877 - data_processing_functions - INFO - (569, 31)
+2020-08-12 17:25:48,894 - data_processing_functions - INFO - ---Shape After deleting unnammed column---
+2020-08-12 17:25:48,897 - data_processing_functions - INFO - (569, 31)
+2020-08-12 17:25:48,899 - data_processing_functions - INFO - ----------matchColumnsDetailsWithSchema Starts----------
+2020-08-12 17:25:48,920 - data_processing_functions - INFO - Number of columns are identical with equal columns in the dataset and schema.
+2020-08-12 17:25:48,925 - data_processing_functions - INFO - ----------removeNullValues Starts----------
+2020-08-12 17:25:48,926 - data_processing_functions - INFO - (569, 31)
+2020-08-12 17:25:48,927 - data_processing_functions - INFO - Null Values Count Before :
+2020-08-12 17:25:48,937 - data_processing_functions - INFO - id                         0
+radius_mean                0
+texture_mean               0
+perimeter_mean             0
+area_mean                  0
+smoothness_mean            0
+compactness_mean           0
+concavity_mean             0
+concave points_mean        0
+symmetry_mean              0
+fractal_dimension_mean     0
+radius_se                  0
+texture_se                 0
+perimeter_se               0
+area_se                    0
+smoothness_se              0
+compactness_se             0
+concavity_se               0
+concave points_se          0
+symmetry_se                0
+fractal_dimension_se       0
+radius_worst               0
+texture_worst              0
+perimeter_worst            0
+area_worst                 0
+smoothness_worst           0
+compactness_worst          0
+concavity_worst            0
+concave points_worst       0
+symmetry_worst             0
+fractal_dimension_worst    0
+dtype: int64
+2020-08-12 17:25:48,945 - data_processing_functions - INFO - Null Values Count After :
+2020-08-12 17:25:48,951 - data_processing_functions - INFO - id                         0
+radius_mean                0
+texture_mean               0
+perimeter_mean             0
+area_mean                  0
+smoothness_mean            0
+compactness_mean           0
+concavity_mean             0
+concave points_mean        0
+symmetry_mean              0
+fractal_dimension_mean     0
+radius_se                  0
+texture_se                 0
+perimeter_se               0
+area_se                    0
+smoothness_se              0
+compactness_se             0
+concavity_se               0
+concave points_se          0
+symmetry_se                0
+fractal_dimension_se       0
+radius_worst               0
+texture_worst              0
+perimeter_worst            0
+area_worst                 0
+smoothness_worst           0
+compactness_worst          0
+concavity_worst            0
+concave points_worst       0
+symmetry_worst             0
+fractal_dimension_worst    0
+dtype: int64
+2020-08-12 17:25:48,952 - data_processing_functions - INFO - ----------predictValues Starts----------
+2020-08-12 17:25:48,956 - data_processing_functions - INFO - (569, 30)
+2020-08-12 17:25:48,963 - data_processing_functions - INFO - [Errno 2] No such file or directory: 'models/final_model/best_pickle_file.pkl'
+2020-08-12 17:25:48,966 - prediction_scheduler - INFO - Error in reading file.
+2020-08-12 17:25:48,967 - prediction_scheduler - INFO - ================Prediction Scheduler Ended================
+2020-08-12 17:27:54,090 - prediction_scheduler - INFO - ================Prediction Scheduler Started================
+2020-08-12 17:27:54,109 - data_processing_functions - INFO - ---Shape Before deleting unnammed column---
+2020-08-12 17:27:54,109 - data_processing_functions - INFO - (569, 31)
+2020-08-12 17:27:54,111 - data_processing_functions - INFO - ---Shape After deleting unnammed column---
+2020-08-12 17:27:54,111 - data_processing_functions - INFO - (569, 31)
+2020-08-12 17:27:54,112 - data_processing_functions - INFO - ----------matchColumnsDetailsWithSchema Starts----------
+2020-08-12 17:27:54,118 - data_processing_functions - INFO - Number of columns are identical with equal columns in the dataset and schema.
+2020-08-12 17:27:54,118 - data_processing_functions - INFO - ----------removeNullValues Starts----------
+2020-08-12 17:27:54,119 - data_processing_functions - INFO - (569, 31)
+2020-08-12 17:27:54,119 - data_processing_functions - INFO - Null Values Count Before :
+2020-08-12 17:27:54,122 - data_processing_functions - INFO - id                         0
+radius_mean                0
+texture_mean               0
+perimeter_mean             0
+area_mean                  0
+smoothness_mean            0
+compactness_mean           0
+concavity_mean             0
+concave points_mean        0
+symmetry_mean              0
+fractal_dimension_mean     0
+radius_se                  0
+texture_se                 0
+perimeter_se               0
+area_se                    0
+smoothness_se              0
+compactness_se             0
+concavity_se               0
+concave points_se          0
+symmetry_se                0
+fractal_dimension_se       0
+radius_worst               0
+texture_worst              0
+perimeter_worst            0
+area_worst                 0
+smoothness_worst           0
+compactness_worst          0
+concavity_worst            0
+concave points_worst       0
+symmetry_worst             0
+fractal_dimension_worst    0
+dtype: int64
+2020-08-12 17:27:54,124 - data_processing_functions - INFO - Null Values Count After :
+2020-08-12 17:27:54,126 - data_processing_functions - INFO - id                         0
+radius_mean                0
+texture_mean               0
+perimeter_mean             0
+area_mean                  0
+smoothness_mean            0
+compactness_mean           0
+concavity_mean             0
+concave points_mean        0
+symmetry_mean              0
+fractal_dimension_mean     0
+radius_se                  0
+texture_se                 0
+perimeter_se               0
+area_se                    0
+smoothness_se              0
+compactness_se             0
+concavity_se               0
+concave points_se          0
+symmetry_se                0
+fractal_dimension_se       0
+radius_worst               0
+texture_worst              0
+perimeter_worst            0
+area_worst                 0
+smoothness_worst           0
+compactness_worst          0
+concavity_worst            0
+concave points_worst       0
+symmetry_worst             0
+fractal_dimension_worst    0
+dtype: int64
+2020-08-12 17:27:54,127 - data_processing_functions - INFO - ----------predictValues Starts----------
+2020-08-12 17:27:54,128 - data_processing_functions - INFO - (569, 30)
+2020-08-12 17:27:54,132 - data_processing_functions - INFO - [Errno 2] No such file or directory: 'models/final_model/best_pickle_file.pkl'
+2020-08-12 17:27:54,133 - prediction_scheduler - INFO - Error in reading file.
+2020-08-12 17:27:54,133 - prediction_scheduler - INFO - ================Prediction Scheduler Ended================
+2020-08-12 17:55:48,839 - prediction_scheduler - INFO - ================Prediction Scheduler Started================
+2020-08-12 17:55:48,870 - data_processing_functions - INFO - ---Shape Before deleting unnammed column---
+2020-08-12 17:55:48,871 - data_processing_functions - INFO - (569, 31)
+2020-08-12 17:55:48,877 - data_processing_functions - INFO - ---Shape After deleting unnammed column---
+2020-08-12 17:55:48,878 - data_processing_functions - INFO - (569, 31)
+2020-08-12 17:55:48,879 - data_processing_functions - INFO - ----------matchColumnsDetailsWithSchema Starts----------
+2020-08-12 17:55:48,900 - data_processing_functions - INFO - Number of columns are identical with equal columns in the dataset and schema.
+2020-08-12 17:55:48,901 - data_processing_functions - INFO - ----------removeNullValues Starts----------
+2020-08-12 17:55:48,903 - data_processing_functions - INFO - (569, 31)
+2020-08-12 17:55:48,904 - data_processing_functions - INFO - Null Values Count Before :
+2020-08-12 17:55:48,910 - data_processing_functions - INFO - id                         0
+radius_mean                0
+texture_mean               0
+perimeter_mean             0
+area_mean                  0
+smoothness_mean            0
+compactness_mean           0
+concavity_mean             0
+concave points_mean        0
+symmetry_mean              0
+fractal_dimension_mean     0
+radius_se                  0
+texture_se                 0
+perimeter_se               0
+area_se                    0
+smoothness_se              0
+compactness_se             0
+concavity_se               0
+concave points_se          0
+symmetry_se                0
+fractal_dimension_se       0
+radius_worst               0
+texture_worst              0
+perimeter_worst            0
+area_worst                 0
+smoothness_worst           0
+compactness_worst          0
+concavity_worst            0
+concave points_worst       0
+symmetry_worst             0
+fractal_dimension_worst    0
+dtype: int64
+2020-08-12 17:55:48,915 - data_processing_functions - INFO - Null Values Count After :
+2020-08-12 17:55:48,921 - data_processing_functions - INFO - id                         0
+radius_mean                0
+texture_mean               0
+perimeter_mean             0
+area_mean                  0
+smoothness_mean            0
+compactness_mean           0
+concavity_mean             0
+concave points_mean        0
+symmetry_mean              0
+fractal_dimension_mean     0
+radius_se                  0
+texture_se                 0
+perimeter_se               0
+area_se                    0
+smoothness_se              0
+compactness_se             0
+concavity_se               0
+concave points_se          0
+symmetry_se                0
+fractal_dimension_se       0
+radius_worst               0
+texture_worst              0
+perimeter_worst            0
+area_worst                 0
+smoothness_worst           0
+compactness_worst          0
+concavity_worst            0
+concave points_worst       0
+symmetry_worst             0
+fractal_dimension_worst    0
+dtype: int64
+2020-08-12 17:55:48,922 - data_processing_functions - INFO - ----------predictValues Starts----------
+2020-08-12 17:55:48,925 - data_processing_functions - INFO - (569, 30)
+2020-08-12 17:55:48,933 - data_processing_functions - INFO - [Errno 2] No such file or directory: 'models/final_model/best_pickle_file.pkl'
+2020-08-12 17:55:48,934 - prediction_scheduler - INFO - Error in reading file.
+2020-08-12 17:55:48,935 - prediction_scheduler - INFO - ================Prediction Scheduler Ended================
+2020-08-12 18:07:44,158 - prediction_scheduler - INFO - ================Prediction Scheduler Started================
+2020-08-12 18:07:44,186 - data_processing_functions - INFO - ---Shape Before deleting unnammed column---
+2020-08-12 18:07:44,187 - data_processing_functions - INFO - (569, 31)
+2020-08-12 18:07:44,190 - data_processing_functions - INFO - ---Shape After deleting unnammed column---
+2020-08-12 18:07:44,191 - data_processing_functions - INFO - (569, 31)
+2020-08-12 18:07:44,191 - data_processing_functions - INFO - ----------matchColumnsDetailsWithSchema Starts----------
+2020-08-12 18:07:44,200 - data_processing_functions - INFO - Number of columns are identical with equal columns in the dataset and schema.
+2020-08-12 18:07:44,201 - data_processing_functions - INFO - ----------removeNullValues Starts----------
+2020-08-12 18:07:44,201 - data_processing_functions - INFO - (569, 31)
+2020-08-12 18:07:44,202 - data_processing_functions - INFO - Null Values Count Before :
+2020-08-12 18:07:44,204 - data_processing_functions - INFO - id                         0
+radius_mean                0
+texture_mean               0
+perimeter_mean             0
+area_mean                  0
+smoothness_mean            0
+compactness_mean           0
+concavity_mean             0
+concave points_mean        0
+symmetry_mean              0
+fractal_dimension_mean     0
+radius_se                  0
+texture_se                 0
+perimeter_se               0
+area_se                    0
+smoothness_se              0
+compactness_se             0
+concavity_se               0
+concave points_se          0
+symmetry_se                0
+fractal_dimension_se       0
+radius_worst               0
+texture_worst              0
+perimeter_worst            0
+area_worst                 0
+smoothness_worst           0
+compactness_worst          0
+concavity_worst            0
+concave points_worst       0
+symmetry_worst             0
+fractal_dimension_worst    0
+dtype: int64
+2020-08-12 18:07:44,207 - data_processing_functions - INFO - Null Values Count After :
+2020-08-12 18:07:44,209 - data_processing_functions - INFO - id                         0
+radius_mean                0
+texture_mean               0
+perimeter_mean             0
+area_mean                  0
+smoothness_mean            0
+compactness_mean           0
+concavity_mean             0
+concave points_mean        0
+symmetry_mean              0
+fractal_dimension_mean     0
+radius_se                  0
+texture_se                 0
+perimeter_se               0
+area_se                    0
+smoothness_se              0
+compactness_se             0
+concavity_se               0
+concave points_se          0
+symmetry_se                0
+fractal_dimension_se       0
+radius_worst               0
+texture_worst              0
+perimeter_worst            0
+area_worst                 0
+smoothness_worst           0
+compactness_worst          0
+concavity_worst            0
+concave points_worst       0
+symmetry_worst             0
+fractal_dimension_worst    0
+dtype: int64
+2020-08-12 18:07:44,210 - data_processing_functions - INFO - ----------predictValues Starts----------
+2020-08-12 18:07:44,214 - data_processing_functions - INFO - (569, 30)
+2020-08-12 18:07:44,219 - data_processing_functions - INFO - [Errno 2] No such file or directory: 'models/final_model/best_pickle_file.pkl'
+2020-08-12 18:07:44,220 - prediction_scheduler - INFO - Error in reading file.
+2020-08-12 18:07:44,220 - prediction_scheduler - INFO - ================Prediction Scheduler Ended================
