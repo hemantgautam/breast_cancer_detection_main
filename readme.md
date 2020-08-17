@@ -4,7 +4,7 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## Project Description:
+### Project Description:
 
 The main purpose of this project is to predict the cancer type of given data.
 Their are two type of cancer given in training Data - 
@@ -42,6 +42,6 @@ First models are getting trained on train and test data and best model is chosen
 
 10. All html files are kept inside templates directory.
 
-11. Model is deployed on Azure and to access that url is:
-	http://breastcancermodeldetection.azurewebsites.net/
+Model is deployed on Azure and to access that url is:
+http://breastcancermodeldetection.azurewebsites.net/
 
