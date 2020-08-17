@@ -1,21 +1,10 @@
-
-<!-- TABLE OF CONTENTS -->
-## Table of Contents
-
-* [Project Description](#about-the-project)
-* [Features](#getting-started)
-* [Prediction](#prediction)
-* [Logger](#logger)
-* [Important Points](#important_points)
-  * [Installation](#installation)
-  * [Installation](#installation)
-
+<!-- ABOUT THE PROJECT -->
+## Created By:
+ 	alam.jane61@gmail.com and hemantgautam50@gmail.com
 
 
 <!-- ABOUT THE PROJECT -->
-## Project Description
-
-[![Breast Cancer Detection][product-screenshot]](https://example.com)
+## Project Description:
 
 The main purpose of this project is to predict the cancer type of given data.
 Their are two type of cancer given in training Data - 
@@ -25,120 +14,34 @@ Their are two type of cancer given in training Data -
 First models are getting trained on train and test data and best model is chosen based on the accuracy and that model is used for prediction.
 
 ### Feature
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
-* [Laravel](https://laravel.com)
+1. Training the model with api(/breast-cancer-api/train) using postman/insomania.
+		a. Training will create 4 pickle files inside models/ directory
+		b. based on the accuracy best pickle file will be renamed as "best_pickle_file.pkl" and moved inside models/final_model directory
 
+2. Predicting the values in three ways - 
+		a. Single record prediction from UI(single_record_prediction.py)
+		b. Single record prediction from Json
+		c. Csv upload data prediction
 
+3. Logger
+	a. Their are two logger files getting created for training and prediction seperately.
+	b. All train/predict methods execution will be captured in respective logger files.
+	c. All exceptions will also be captured in logger file.
 
-<!-- GETTING STARTED -->
-## Getting Started
+4. Train/test csv data(breast_cancer_dataset.csv) is kept inside "train_test_data" directory, this is the file which will be used to train models.
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+5. After all imputation and cleaning processes of the train csv, final cleaned csv is getting stored inside "train_test_data/final_data_for_model" directory.
 
-### Prerequisites
+6. If csv is getting uploaded for prediction from UI, that csv is getting stored inside" predict_csv_uploads" directory.
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-```sh
-npm install npm@latest -g
-```
+7. All clean train, predict csv and predicted results stores in Mongo DB.
 
-### Installation
+8. Documentation directory contains details LLD document for the project.
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-```sh
-git clone https://github.com/your_username_/Project-Name.git
-```
-3. Install NPM packages
-```sh
-npm install
-```
-4. Enter your API in `config.js`
-```JS
-const API_KEY = 'ENTER YOUR API';
-```
+9. EDA directory contains all ipynb files and their screenshot.
 
+10. All html files are kept inside templates directory.
 
+11. Model is deployed on Azure and to access that url is:
+	http://breastcancermodeldetection.azurewebsites.net/
 
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a list of proposed features (and known issues).
-
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
-
-
-<!-- CONTACT -->
-## Contact
-
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
-
-
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Img Shields](https://shields.io)
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Pages](https://pages.github.com)
-* [Animate.css](https://daneden.github.io/animate.css)
-* [Loaders.css](https://connoratherton.com/loaders)
-* [Slick Carousel](https://kenwheeler.github.io/slick)
-* [Smooth Scroll](https://github.com/cferdinandi/smooth-scroll)
-* [Sticky Kit](http://leafo.net/sticky-kit)
-* [JVectorMap](http://jvectormap.com)
-* [Font Awesome](https://fontawesome.com)
-
-
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=flat-square
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=flat-square
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=flat-square
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=flat-square
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=flat-square
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
