@@ -32,7 +32,7 @@ class DataProcessingFunctions:
         self.logger = getlogger(
             __name__, './logger/' + log_file, consoleHandlerrequired=True)
 
-        
+        self.dashboard = {}
         if process_type == "training":
 
             # schema json file which is getting used to validate training csv data
@@ -149,7 +149,7 @@ class DataProcessingFunctions:
         # train test split
         X_train, X_test, y_train, y_test = train_test_split(
             X, y, test_size=0.2, random_state=5)
-
+        dsbrd_train_test_split = str(X_train.shape[0]) + "/" + str(X_test.shape[0])
         # Creating models dictionary to run in a loop
         models = {"lr": LogisticRegression(), "rfc": RandomForestClassifier(
         ), "svc": SVC(), "knn": KNeighborsClassifier(n_neighbors=1)}
@@ -175,10 +175,16 @@ class DataProcessingFunctions:
             best_model_pkl_file = sorted(model_acccuray.items(), key=lambda x: x[1], reverse=True)[
                 0][0] + '_breast_cancer_model_' + str(sorted(model_acccuray.items(), key=lambda x: x[1], reverse=True)[0][1]) + '.pkl'
 
+            dsbrd_model_accuracy = str(sorted(model_acccuray.items(), key=lambda x: x[1], reverse=True)[0][1])
             # cpoying the best pickle file from under model folder to model/final_model folder which will be used for prediction
             copyfile("models/"+best_model_pkl_file, best_pickle_file_path)
 
             self.logger.info(best_model_pkl_file)
+            dsbrd_target_count = str(self.df[y==1].shape[0]) + "/" + str(self.df[y==0].shape[0])
+            curr_time = time.localtime() 
+            last_traning_time = time.strftime("%d-%m-%y %H:%M", curr_time)
+            self.dashboard = {'dsbrd_model_accuracy': dsbrd_model_accuracy, 'dsbrd_target_count': dsbrd_target_count, 'dsbrd_train_test_split': dsbrd_train_test_split, 'last_traning_time': last_traning_time}
+            db_conn.storeDashboardDetails( self.dashboard)
             self.logger.info("==========================Training  Completed==========================")
             return True
         except Exception as e:

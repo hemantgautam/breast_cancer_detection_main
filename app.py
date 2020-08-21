@@ -1,4 +1,4 @@
-from flask import Flask, jsonify,request, Response, render_template, redirect
+from flask import Flask, jsonify,request, Response, render_template, redirect, session
 from flask_cors import CORS, cross_origin
 import pickle
 import sklearn
@@ -15,9 +15,13 @@ import time
 import atexit
 from prediction_scheduler import PredictScheduler
 import config
+import bcrypt
+import flask_monitoringdashboard as dashboard
+
 # Flask app initialization
 app = Flask(__name__)
 CORS(app, supports_credentials=True)
+dashboard.bind(app)
 
 # Initilization the object of ConfigParser 
 configs = configparser.ConfigParser()
@@ -30,7 +34,7 @@ best_pickle_file_path = configs['models']['best_pickle_file_path']
 
 # Logger file for prediction
 logger = getlogger(app.name, './logger/' + prediction_logger, consoleHandlerrequired=True)
-
+db_conn = DatabaseConnect()
 
 # function to render home page in GET method and predict individual values which user enter from front end or send as api using postman/insomania in POST method
 @app.route("/", methods=['GET', 'POST'])
@@ -92,7 +96,6 @@ def predictValidation():
 # function to show all csv predicted data in tabuler data
 @app.route("/predicted-results", methods=['GET'])
 def predictedResult():
-    db_conn = DatabaseConnect()
     try:
         result = db_conn.fetchPredictedResults()
         return render_template("predicted-results.html", predicted_result=result)
@@ -105,7 +108,6 @@ def predictedResult():
 # function to download predicted result from database
 @app.route("/predicted-results-download", methods=['GET'])
 def downloadPredictedCsv():
-    db_conn = DatabaseConnect()
     cursor = db_conn.fetchPredictedResults()
     
     # Expand the cursor and construct the DataFrame
@@ -116,5 +118,65 @@ def downloadPredictedCsv():
        "attachment; filename=predicted_result_"+ curr_clock + ".csv"})
 
 
+################### Routes for Admin Dashboard ###################
+# function to check login for custom dashboard
+@app.route('/admin', methods=['GET', 'POST'])
+def login():
+    if request.method == 'GET':
+        # db_conn = DatabaseConnect()
+        # db_conn.addUser()
+        if 'email' in session:
+            return redirect('admin/dashboard')
+
+        else:
+            return render_template('dashboard/login.html')
+
+    elif request.method == 'POST':
+        login_user = db_conn.userLogin(request.form['email'])
+        # print(login_user)
+        # print(login_user['password'].encode('utf-8'))
+        if login_user:
+            if request.form['password'] == login_user['password']:
+                session['email'] = request.form['email']
+                return redirect('admin/dashboard')
+            else:
+                return render_template('dashboard/login.html', login_error=True)
+        else:
+            return render_template('dashboard/login.html', login_error=True)
+
+# custom dashboard logout function
+@app.route('/admin/logout', methods=['GET'])
+def logout():
+    if 'email' in session:
+        session.clear()
+        return redirect('/admin')
+
+def generate(type):
+    if type == "training":
+        with open('logger/training_logs.log') as f:
+            yield f.read()
+    elif type == "Prediction":
+        with open('logger/prediction_logs.log') as f:
+            yield f.read()
+
+# function to generate reporting on custom dashboard
+@app.route("/admin/reporting", methods=['GET'])
+def reporting():
+    if request.method == 'GET':
+        type = request.args.get('type')
+        return app.response_class(generate(type), mimetype='text/plain')
+ 
+# function to display details on home custom Dashboard home page
+@app.route("/admin/dashboard", methods=['GET'])
+def dashboard():
+    if 'email' in session:
+        # function call to display dashboard details from DB
+        result = db_conn.fetchDashboardDetails()
+        split_result = result['dsbrd_target_count'].split("/")
+        # function call to getch data for charts
+        return render_template('dashboard_base.html', dashboard_details=result, malignant = split_result[0], benign = split_result[1])
+    else:
+        return redirect('/admin')   
 if __name__ == '__main__':
+    app.secret_key = 'asfasdasf#$@!$@!#asfadasdasd!@$!#'
     app.run(port=config.PORT, debug=config.DEBUG_MODE)
